@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C1B1E1627BC08F800A42B88 /* Internship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Internship.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1B1E1627BC08F800A42B88 /* Internship Dmytro Volokhovskyi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internship Dmytro Volokhovskyi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B1E1927BC08F800A42B88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C1B1E1B27BC08F800A42B88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C1B1E1D27BC08F800A42B88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +49,9 @@
 		7C1B1E2527BC08FA00A42B88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C1B1E2827BC08FA00A42B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C1B1E2A27BC08FA00A42B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C1B1E2F27BC08FA00A42B88 /* InternshipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternshipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1B1E2F27BC08FA00A42B88 /* Internship Dmytro VolokhovskyiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Internship Dmytro VolokhovskyiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B1E3327BC08FA00A42B88 /* InternshipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternshipTests.swift; sourceTree = "<group>"; };
-		7C1B1E3927BC08FA00A42B88 /* InternshipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternshipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C1B1E3927BC08FA00A42B88 /* Internship Dmytro VolokhovskyiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Internship Dmytro VolokhovskyiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B1E3D27BC08FA00A42B88 /* InternshipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternshipUITests.swift; sourceTree = "<group>"; };
 		7C1B1E3F27BC08FA00A42B88 /* InternshipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternshipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7C1B1E5927BC126400A42B88 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -97,9 +97,9 @@
 		7C1B1E1727BC08F800A42B88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C1B1E1627BC08F800A42B88 /* Internship.app */,
-				7C1B1E2F27BC08FA00A42B88 /* InternshipTests.xctest */,
-				7C1B1E3927BC08FA00A42B88 /* InternshipUITests.xctest */,
+				7C1B1E1627BC08F800A42B88 /* Internship Dmytro Volokhovskyi.app */,
+				7C1B1E2F27BC08FA00A42B88 /* Internship Dmytro VolokhovskyiTests.xctest */,
+				7C1B1E3927BC08FA00A42B88 /* Internship Dmytro VolokhovskyiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,9 +222,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C1B1E1527BC08F800A42B88 /* Internship */ = {
+		7C1B1E1527BC08F800A42B88 /* Internship Dmytro Volokhovskyi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C1B1E4327BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship" */;
+			buildConfigurationList = 7C1B1E4327BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro Volokhovskyi" */;
 			buildPhases = (
 				7C1B1E1227BC08F800A42B88 /* Sources */,
 				7C1B1E1327BC08F800A42B88 /* Frameworks */,
@@ -234,14 +234,14 @@
 			);
 			dependencies = (
 			);
-			name = Internship;
+			name = "Internship Dmytro Volokhovskyi";
 			productName = Internship;
-			productReference = 7C1B1E1627BC08F800A42B88 /* Internship.app */;
+			productReference = 7C1B1E1627BC08F800A42B88 /* Internship Dmytro Volokhovskyi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7C1B1E2E27BC08FA00A42B88 /* InternshipTests */ = {
+		7C1B1E2E27BC08FA00A42B88 /* Internship Dmytro VolokhovskyiTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C1B1E4627BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "InternshipTests" */;
+			buildConfigurationList = 7C1B1E4627BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro VolokhovskyiTests" */;
 			buildPhases = (
 				7C1B1E2B27BC08FA00A42B88 /* Sources */,
 				7C1B1E2C27BC08FA00A42B88 /* Frameworks */,
@@ -252,14 +252,14 @@
 			dependencies = (
 				7C1B1E3127BC08FA00A42B88 /* PBXTargetDependency */,
 			);
-			name = InternshipTests;
+			name = "Internship Dmytro VolokhovskyiTests";
 			productName = InternshipTests;
-			productReference = 7C1B1E2F27BC08FA00A42B88 /* InternshipTests.xctest */;
+			productReference = 7C1B1E2F27BC08FA00A42B88 /* Internship Dmytro VolokhovskyiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7C1B1E3827BC08FA00A42B88 /* InternshipUITests */ = {
+		7C1B1E3827BC08FA00A42B88 /* Internship Dmytro VolokhovskyiUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C1B1E4927BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "InternshipUITests" */;
+			buildConfigurationList = 7C1B1E4927BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro VolokhovskyiUITests" */;
 			buildPhases = (
 				7C1B1E3527BC08FA00A42B88 /* Sources */,
 				7C1B1E3627BC08FA00A42B88 /* Frameworks */,
@@ -270,9 +270,9 @@
 			dependencies = (
 				7C1B1E3B27BC08FA00A42B88 /* PBXTargetDependency */,
 			);
-			name = InternshipUITests;
+			name = "Internship Dmytro VolokhovskyiUITests";
 			productName = InternshipUITests;
-			productReference = 7C1B1E3927BC08FA00A42B88 /* InternshipUITests.xctest */;
+			productReference = 7C1B1E3927BC08FA00A42B88 /* Internship Dmytro VolokhovskyiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +298,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7C1B1E1127BC08F800A42B88 /* Build configuration list for PBXProject "Internship" */;
+			buildConfigurationList = 7C1B1E1127BC08F800A42B88 /* Build configuration list for PBXProject "Internship Dmytro Volokhovskyi" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -311,9 +311,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C1B1E1527BC08F800A42B88 /* Internship */,
-				7C1B1E2E27BC08FA00A42B88 /* InternshipTests */,
-				7C1B1E3827BC08FA00A42B88 /* InternshipUITests */,
+				7C1B1E1527BC08F800A42B88 /* Internship Dmytro Volokhovskyi */,
+				7C1B1E2E27BC08FA00A42B88 /* Internship Dmytro VolokhovskyiTests */,
+				7C1B1E3827BC08FA00A42B88 /* Internship Dmytro VolokhovskyiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -382,12 +382,12 @@
 /* Begin PBXTargetDependency section */
 		7C1B1E3127BC08FA00A42B88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C1B1E1527BC08F800A42B88 /* Internship */;
+			target = 7C1B1E1527BC08F800A42B88 /* Internship Dmytro Volokhovskyi */;
 			targetProxy = 7C1B1E3027BC08FA00A42B88 /* PBXContainerItemProxy */;
 		};
 		7C1B1E3B27BC08FA00A42B88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C1B1E1527BC08F800A42B88 /* Internship */;
+			target = 7C1B1E1527BC08F800A42B88 /* Internship Dmytro Volokhovskyi */;
 			targetProxy = 7C1B1E3A27BC08FA00A42B88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -603,7 +603,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Internship.app/Internship";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Internship Dmytro Volokhovskyi.app/Internship Dmytro Volokhovskyi";
 			};
 			name = Debug;
 		};
@@ -628,7 +628,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Internship.app/Internship";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Internship Dmytro Volokhovskyi.app/Internship Dmytro Volokhovskyi";
 			};
 			name = Release;
 		};
@@ -681,7 +681,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7C1B1E1127BC08F800A42B88 /* Build configuration list for PBXProject "Internship" */ = {
+		7C1B1E1127BC08F800A42B88 /* Build configuration list for PBXProject "Internship Dmytro Volokhovskyi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C1B1E4127BC08FA00A42B88 /* Debug */,
@@ -690,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C1B1E4327BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship" */ = {
+		7C1B1E4327BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro Volokhovskyi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C1B1E4427BC08FA00A42B88 /* Debug */,
@@ -699,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C1B1E4627BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "InternshipTests" */ = {
+		7C1B1E4627BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro VolokhovskyiTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C1B1E4727BC08FA00A42B88 /* Debug */,
@@ -708,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C1B1E4927BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "InternshipUITests" */ = {
+		7C1B1E4927BC08FA00A42B88 /* Build configuration list for PBXNativeTarget "Internship Dmytro VolokhovskyiUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C1B1E4A27BC08FA00A42B88 /* Debug */,
