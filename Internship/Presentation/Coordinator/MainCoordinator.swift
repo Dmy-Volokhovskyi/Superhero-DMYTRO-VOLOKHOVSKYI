@@ -17,11 +17,8 @@ class MainCoordinator : Coordinator {
         self.navigationController = navigationController
     }
     
-    
     func start() {
-        let vc = ViewController.instantiate()
+        let vc = StartViewController.instantiate()
         navigationController.pushViewController(vc, animated: false)
     }
-    
-     
 }
