@@ -16,11 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let navController = UINavigationController()
-            window.rootViewController = navController
-            window.makeKeyAndVisible()
             self.window = window
             coordinator = MainCoordinator(navigationController: navController)
             coordinator?.start()
+            
+            window.rootViewController = navController
+            window.makeKeyAndVisible()
+            
         }
     }
     
