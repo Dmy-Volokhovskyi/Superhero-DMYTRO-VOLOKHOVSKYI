@@ -22,15 +22,15 @@
 		7C1B1E5A27BC126400A42B88 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5927BC126400A42B88 /* Coordinator.swift */; };
 		7C1B1E5C27BC15FF00A42B88 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5B27BC15FF00A42B88 /* Storyboarded.swift */; };
 		7C1B1E5E27BC178700A42B88 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5D27BC178700A42B88 /* MainCoordinator.swift */; };
-		7C41EF4A27C4011A0051B183 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41EF4927C4011A0051B183 /* HomeScreenModel.swift */; };
 		7C41EF4E27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C41EF4C27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf */; };
 		7C41EF4F27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C41EF4D27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf */; };
+		7C41EF5427C4486A0051B183 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41EF5327C4486A0051B183 /* StartViewModel.swift */; };
+		7C41EF5627C4488B0051B183 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41EF5527C4488B0051B183 /* HomeScreenModel.swift */; };
 		7CAE1E5227C2D45900988335 /* HomeScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAE1E5127C2D45900988335 /* HomeScreenViewController.storyboard */; };
 		7CAE1E5627C2D47A00988335 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE1E5527C2D47A00988335 /* HomeScreenViewController.swift */; };
 		7CAE1E5A27C2DC3C00988335 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE1E5927C2DC3C00988335 /* ProfileManager.swift */; };
 		7CC9C4CD27C3CB3C001F59C2 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC9C4CB27C3CB3C001F59C2 /* Profile+CoreDataClass.swift */; };
 		7CC9C4CE27C3CB3C001F59C2 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC9C4CC27C3CB3C001F59C2 /* Profile+CoreDataProperties.swift */; };
-		7CC9C4D127C3D519001F59C2 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC9C4D027C3D519001F59C2 /* StartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		7C1190D327BE567B00D89565 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
-		7C1190D527BFEE3400D89565 /* UIView+Gradiend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Gradiend.swift"; path = "Internship/Presentation/Storyboard/UIView+Gradiend.swift"; sourceTree = SOURCE_ROOT; };
+		7C1190D527BFEE3400D89565 /* UIView+Gradiend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Gradiend.swift"; path = "Internship/Extensions/UIView+Gradiend.swift"; sourceTree = SOURCE_ROOT; };
 		7C1B1E1627BC08F800A42B88 /* Internship Dmytro Volokhovskyi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internship Dmytro Volokhovskyi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B1E1927BC08F800A42B88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C1B1E1B27BC08F800A42B88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,15 +70,15 @@
 		7C1B1E5927BC126400A42B88 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7C1B1E5B27BC15FF00A42B88 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7C1B1E5D27BC178700A42B88 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		7C41EF4927C4011A0051B183 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeScreenModel.swift; path = Internship/Models/HomeScreenModel.swift; sourceTree = SOURCE_ROOT; };
 		7C41EF4C27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		7C41EF4D27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
+		7C41EF5327C4486A0051B183 /* StartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewModel.swift; path = Internship/Presentation/ViewControllers/ViewModels/StartViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7C41EF5527C4488B0051B183 /* HomeScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeScreenModel.swift; path = Internship/Presentation/ViewControllers/ViewModels/HomeScreenModel.swift; sourceTree = SOURCE_ROOT; };
 		7CAE1E5127C2D45900988335 /* HomeScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreenViewController.storyboard; sourceTree = "<group>"; };
 		7CAE1E5527C2D47A00988335 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		7CAE1E5927C2DC3C00988335 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		7CC9C4CB27C3CB3C001F59C2 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		7CC9C4CC27C3CB3C001F59C2 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		7CC9C4D027C3D519001F59C2 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewModel.swift; path = Internship/Models/StartViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +129,8 @@
 		7C1B1E1827BC08F800A42B88 /* Internship */ = {
 			isa = PBXGroup;
 			children = (
+				7C41EF5027C446C40051B183 /* Extensions */,
 				7C41EF4B27C4180A0051B183 /* Fonts */,
-				7C1B1E4C27BC0F4A00A42B88 /* Extensions */,
 				7C1B1E4E27BC0F6300A42B88 /* Models */,
 				7C1B1E4D27BC0F5800A42B88 /* Protocols */,
 				7C1B1E4F27BC0F7200A42B88 /* Presentation */,
@@ -159,14 +159,6 @@
 			path = InternshipUITests;
 			sourceTree = "<group>";
 		};
-		7C1B1E4C27BC0F4A00A42B88 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7C1190D527BFEE3400D89565 /* UIView+Gradiend.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		7C1B1E4D27BC0F5800A42B88 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +182,7 @@
 			children = (
 				7C1B1E5427BC0FAE00A42B88 /* Storyboard */,
 				7C1B1E5327BC0FA500A42B88 /* ViewControllers */,
-				7C1B1E5227BC0F9A00A42B88 /* ViewModels */,
+				7C41EF5227C4483E0051B183 /* ViewModel */,
 				7C1B1E5127BC0F8C00A42B88 /* Views */,
 				7C1B1E5027BC0F8100A42B88 /* Coordinator */,
 			);
@@ -210,15 +202,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7C1B1E5227BC0F9A00A42B88 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				7CC9C4D027C3D519001F59C2 /* StartViewModel.swift */,
-				7C41EF4927C4011A0051B183 /* HomeScreenModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		7C1B1E5327BC0FA500A42B88 /* ViewControllers */ = {
@@ -256,6 +239,23 @@
 				7C41EF4C27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7C41EF5027C446C40051B183 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C1190D527BFEE3400D89565 /* UIView+Gradiend.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C41EF5227C4483E0051B183 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7C41EF5527C4488B0051B183 /* HomeScreenModel.swift */,
+				7C41EF5327C4486A0051B183 /* StartViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7CAE1E5727C2DBDA00988335 /* ProfileCoreData  */ = {
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CC9C4D127C3D519001F59C2 /* StartViewModel.swift in Sources */,
+				7C41EF5427C4486A0051B183 /* StartViewModel.swift in Sources */,
 				7C1B1E1E27BC08F800A42B88 /* StartViewController.swift in Sources */,
 				7CAE1E5A27C2DC3C00988335 /* ProfileManager.swift in Sources */,
 				7C1B1E5E27BC178700A42B88 /* MainCoordinator.swift in Sources */,
@@ -420,8 +420,8 @@
 				7C1B1E1A27BC08F800A42B88 /* AppDelegate.swift in Sources */,
 				7C1B1E5A27BC126400A42B88 /* Coordinator.swift in Sources */,
 				7C1B1E1C27BC08F800A42B88 /* SceneDelegate.swift in Sources */,
-				7C41EF4A27C4011A0051B183 /* HomeScreenModel.swift in Sources */,
 				7C1B1E2427BC08F800A42B88 /* Profile.xcdatamodeld in Sources */,
+				7C41EF5627C4488B0051B183 /* HomeScreenModel.swift in Sources */,
 				7C1B1E5C27BC15FF00A42B88 /* Storyboarded.swift in Sources */,
 				7CC9C4CE27C3CB3C001F59C2 /* Profile+CoreDataProperties.swift in Sources */,
 				7CAE1E5627C2D47A00988335 /* HomeScreenViewController.swift in Sources */,
@@ -603,7 +603,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SH8B934J9Q;
+				DEVELOPMENT_TEAM = QZ8GL87UF9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Internship/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -631,7 +631,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SH8B934J9Q;
+				DEVELOPMENT_TEAM = QZ8GL87UF9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Internship/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

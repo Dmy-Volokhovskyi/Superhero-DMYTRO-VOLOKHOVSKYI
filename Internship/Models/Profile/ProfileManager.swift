@@ -18,7 +18,6 @@ class ProfileManager {
     
     
     func createDefaultProfile (with sex : String) {
-        print(sex)
         userProfile = Profile(context: context)
         userProfile?.sex = sex
         saveProfile()
@@ -40,7 +39,6 @@ class ProfileManager {
             let userProfileArray =  try context.fetch(request)
             if userProfileArray != [] {
                 userProfile = userProfileArray[0]
-                print(userProfileArray)
             }
         }catch {
             print ( "Error fetching data \(error)" )
