@@ -1,5 +1,5 @@
 //
-//  MuscleViewController.swift
+//  ProgramsViewController.swift
 //  Internship Dmytro Volokhovskyi
 //
 //  Created by Дмитро Волоховський on 22/02/2022.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class MuscleViewController: UIViewController,Storyboarded {
+class ProgramsViewController: UIViewController,Storyboarded {
 
     weak var coordinator : MainCoordinator?
-    let muscleViewModel = MuscleViewModel()
+    let programsViewModel = ProgramsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = muscleViewModel.barButtonTitle
-        // Do any additional setup after loading the view.
+        self.title = programsViewModel.barButtonTitle
+        self.navigationController?.navigationBar.isHidden = false
     }
     
 

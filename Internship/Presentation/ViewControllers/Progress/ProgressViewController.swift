@@ -15,7 +15,7 @@ class ProgressViewController: UIViewController,Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = progressViewModel.barButtonTitle
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = false
     }
     
 

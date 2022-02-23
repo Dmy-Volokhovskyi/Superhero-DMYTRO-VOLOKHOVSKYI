@@ -7,10 +7,11 @@
 
 import Foundation
 extension MainCoordinator {
-     func programs() {
+    func programs() {
         let vc = ProgramsViewController.instantiate()
         vc.coordinator = self
         vc.navigationItem.hidesBackButton = false
+        vc.navigationController?.navigationBar.isHidden = false
         navigationController.pushViewController(vc, animated: false)
-      }
+    }
 }

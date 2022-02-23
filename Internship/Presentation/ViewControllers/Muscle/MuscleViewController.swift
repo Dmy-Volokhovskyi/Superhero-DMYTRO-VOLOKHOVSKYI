@@ -1,5 +1,5 @@
 //
-//  CalculatorViewController.swift
+//  MuscleViewController.swift
 //  Internship Dmytro Volokhovskyi
 //
 //  Created by Дмитро Волоховський on 22/02/2022.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController,Storyboarded {
+class MuscleViewController: UIViewController,Storyboarded {
 
     weak var coordinator : MainCoordinator?
-    let calculatorViewModel = CalculatorViewModel()
+    let muscleViewModel = MuscleViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = calculatorViewModel.barButtonTitle
-        // Do any additional setup after loading the view.
+        self.title = muscleViewModel.barButtonTitle
+        self.navigationController?.navigationBar.isHidden = false
     }
     
 

@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController,Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = profileViewModel.barButtonTitle
-        
+        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
     }
     

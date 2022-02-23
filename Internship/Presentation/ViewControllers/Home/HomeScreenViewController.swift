@@ -31,12 +31,14 @@ class HomeScreenViewController : UIViewController,Storyboarded{
     }
     override func viewDidAppear(_ animated: Bool) {
         //hide navBar when the view appears because navagation saves the scroll view feature and position and if back is pressed on small device nav bar stays on the top of menu view
+       scrollView.setContentOffset(.zero, animated: true)
        navigationController?.navigationBar.isHidden = true
     }
+
     
     private func setInterface() {
         // Get information for correct image and text
-        let gender = ProfileManager.sharedInstance.userProfile?.sex ?? ""
+        let gender = homeScreenModel.gender
         // set correct image and text 
         if gender == "SUPERGIRL"{
             backgroundImage.image = homeScreenModel.girlImage
@@ -55,24 +57,6 @@ class HomeScreenViewController : UIViewController,Storyboarded{
         menuTable.backgroundColor = UIColor.clear
         menuTable.alwaysBounceVertical = false
     }
-    // perform transition to new screen
-    func categorySelected (with menuCategory : String ){
-        scrollView.setContentOffset(.zero, animated: true)
-        switch menuCategory {
-        case "Профиль" :
-            coordinator?.profile()
-        case "Прогресс":
-            coordinator?.progress()
-        case "Программы":
-            coordinator?.programs()
-        case "Калькулятор":
-            coordinator?.calculator()
-        case "Мышцы":
-            coordinator?.muscle()
-        default:
-            return
-        }
-    }
 }
 
 extension HomeScreenViewController : UITableViewDataSource {
@@ -86,7 +70,7 @@ extension HomeScreenViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: homeScreenModel.reuseIdentifier, for: indexPath) as! MenuCell
-        cell.menuItemLabel.text = homeScreenModel.menuArray[indexPath.section]
+        cell.setUpCell(with: homeScreenModel.menuArray[indexPath.section])
         return cell
     }
 }
@@ -103,8 +87,8 @@ extension HomeScreenViewController : UITableViewDelegate {
         return headerView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        categorySelected(with: homeScreenModel.menuArray[indexPath.section])
+        scrollView.setContentOffset(.zero, animated: false)
+        homeScreenModel.categorySelected(with: indexPath.section, coordinator: coordinator!)
     }
 }
 

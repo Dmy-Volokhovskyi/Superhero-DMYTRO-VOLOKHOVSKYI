@@ -7,10 +7,11 @@
 
 import Foundation
 extension MainCoordinator {
-     func calculator() {
+    func calculator() {
         let vc = CalculatorViewController.instantiate()
         vc.coordinator = self
         vc.navigationItem.hidesBackButton = false
+        vc.navigationController?.navigationBar.isHidden = false
         navigationController.pushViewController(vc, animated: false)
-      }
+    }
 }

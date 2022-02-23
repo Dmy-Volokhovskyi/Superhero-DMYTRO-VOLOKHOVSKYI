@@ -18,7 +18,7 @@ class MainCoordinator : Coordinator {
     }
     
     func start() {
-      
+        
         ProfileManager.sharedInstance.loadProfileInformation()
         if ProfileManager.sharedInstance.userProfile != nil {
             home()
@@ -29,12 +29,12 @@ class MainCoordinator : Coordinator {
         }
     }
     
-  private func home() {
-      let vc = HomeScreenViewController.instantiate()
-      vc.coordinator = self
-      vc.navigationItem.hidesBackButton = true
-      vc.navigationController?.navigationBar.isHidden = true
-      vc.navigationController?.hidesBarsOnSwipe = true
-      navigationController.pushViewController(vc, animated: false)
+    private func home() {
+        let vc = HomeScreenViewController.instantiate()
+        vc.coordinator = self
+        vc.navigationItem.hidesBackButton = true
+        vc.navigationController?.navigationBar.isHidden = true
+        vc.navigationController?.hidesBarsOnSwipe = true
+        navigationController.pushViewController(vc, animated: false)
     }
 }

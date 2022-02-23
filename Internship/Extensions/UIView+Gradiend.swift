@@ -16,7 +16,7 @@ extension UIView {
         
         gradient.frame.size = self.frame.size
         gradient.frame.origin = CGPoint(x: 0.0, y: 0.0)
-
+        
         // Iterates through the colors array and casts the individual elements to cgColor
         // Alternatively, one could use a CGColor Array in the first place or do this cast in a for-loop
         gradient.colors = colors.map{ $0.cgColor }
