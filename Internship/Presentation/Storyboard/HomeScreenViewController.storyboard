@@ -71,6 +71,7 @@
                         <outlet property="backgroundImage" destination="v5K-15-LS1" id="oVJ-94-rZV"/>
                         <outlet property="genderLabel" destination="Grg-ba-z0M" id="nIG-wk-Z9b"/>
                         <outlet property="menuTable" destination="Qdm-OU-rdd" id="z85-dr-n7l"/>
+                        <outlet property="scrollView" destination="huc-bp-4gx" id="G96-lB-Zi6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

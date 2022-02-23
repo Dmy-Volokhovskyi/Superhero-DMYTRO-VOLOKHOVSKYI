@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController,Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = profileViewModel.barButtonTitle
+        
         // Do any additional setup after loading the view.
     }
     

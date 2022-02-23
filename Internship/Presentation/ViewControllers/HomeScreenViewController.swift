@@ -10,6 +10,7 @@ import UIKit
 
 class HomeScreenViewController : UIViewController,Storyboarded{
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuTable: UITableView!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -27,6 +28,10 @@ class HomeScreenViewController : UIViewController,Storyboarded{
         //regiseter cell
         menuTable!.register(UINib.init(nibName: homeScreenModel.cellNibName, bundle: nil), forCellReuseIdentifier: homeScreenModel.reuseIdentifier)
         setInterface()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        //hide navBar when the view appears because navagation saves the scroll view feature and position and if back is pressed on small device nav bar stays on the top of menu view
+       navigationController?.navigationBar.isHidden = true
     }
     
     private func setInterface() {
@@ -52,7 +57,7 @@ class HomeScreenViewController : UIViewController,Storyboarded{
     }
     // perform transition to new screen
     func categorySelected (with menuCategory : String ){
-        
+        scrollView.setContentOffset(.zero, animated: true)
         switch menuCategory {
         case "Профиль" :
             coordinator?.profile()
