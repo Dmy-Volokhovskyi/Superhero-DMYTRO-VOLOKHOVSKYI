@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func addGradient(colors: [UIColor] = [.black, UIColor.clear], locations: [NSNumber] = [0,0.83,1], startPoint: CGPoint = CGPoint(x: 1.0, y: 0.0), endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0), type: CAGradientLayerType = .axial){
+    func addGradient(colors: [UIColor] = [.black, UIColor.clear], locations: [NSNumber] = [0.27,1], startPoint: CGPoint = CGPoint(x: 1.0, y: 0.0), endPoint: CGPoint = CGPoint(x: 1.0, y: 1.0), type: CAGradientLayerType = .axial){
         
         let gradient = CAGradientLayer()
         

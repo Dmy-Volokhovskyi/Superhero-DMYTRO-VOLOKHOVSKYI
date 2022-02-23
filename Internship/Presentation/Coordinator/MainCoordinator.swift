@@ -27,12 +27,14 @@ class MainCoordinator : Coordinator {
             vc.coordinator = self
             navigationController.pushViewController(vc, animated: false)
         }
-        
     }
     
   private func home() {
       let vc = HomeScreenViewController.instantiate()
       vc.coordinator = self
+      vc.navigationItem.hidesBackButton = true
+      vc.navigationController?.navigationBar.isHidden = true
+      vc.navigationController?.hidesBarsOnSwipe = true
       navigationController.pushViewController(vc, animated: false)
     }
 }

@@ -26,16 +26,28 @@ class StartViewController: UIViewController,Storyboarded {
     }
     override func viewDidLayoutSubviews() {
         topGirlGradient.addGradient()
-        bottomManGradient.addGradient(colors: [.black, UIColor.clear], locations: [0,0.83,1], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 0.0, y: 0.0), type: .axial)
+        bottomManGradient.addGradient(colors: [.black, UIColor.clear], locations: [0.27,1], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 0.0, y: 0.0), type: .axial)
         supermanButton.layer.cornerRadius = supermanButton.frame.size.height/2
         supergirlButton.layer.cornerRadius = supergirlButton.frame.size.height/2
     }
     //MARK: - Configure interface.
     private func configureUI() {
-        supermanButton.setAttributedTitle(viewModel.manButtonTitle, for: .normal)
-        supergirlButton.setAttributedTitle(viewModel.girlButtonTitle, for: .normal)
-        mainTitleLabel.attributedText = viewModel.mainTitle
-        chooseHereLabel.attributedText = viewModel.chooseHeroTitle
+        //set man button title
+        supermanButton.setTitle(viewModel.manButtonTitle.uppercased(), for: .normal)
+        supermanButton.titleLabel?.textColor = .black
+        supermanButton.titleLabel?.font = UIFont(name: "SairaRoman-Regular", size: 18)
+        //set gitl button title
+        supergirlButton.setTitle(viewModel.girlButtonTitle.uppercased(), for: .normal)
+        supermanButton.titleLabel?.textColor = .black
+        supermanButton.titleLabel?.font = UIFont(name: "SairaRoman-Regular", size: 18)
+        //set main label text
+        mainTitleLabel.text = viewModel.mainTitle.uppercased()
+        mainTitleLabel.textColor = UIColor(named: "yellowUIColor") ?? UIColor.yellow
+        mainTitleLabel.font = UIFont(name: "Futura-Bold", size: 32)
+        // set Choose hero text
+        chooseHereLabel.text = viewModel.chooseHeroTitle
+        chooseHereLabel.textColor = .white
+        chooseHereLabel.font = UIFont(name: "SairaRoman-Regular", size: 16)
         girlBackground.image = viewModel.girlBackgroundImage
         manBackground.image = viewModel.manBackgroundImage
         

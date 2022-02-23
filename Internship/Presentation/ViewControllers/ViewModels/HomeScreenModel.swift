@@ -10,10 +10,11 @@ import UIKit
 
 struct HomeScreenModel {
     
-    var profile = ProfileManager.sharedInstance.userProfile
-    let girlBackgroundImage = UIImage(named: "girlBackgroundCut")
-    let manBackgroundImage = UIImage(named: "manBackgroundCut")
-    
-    let manTitle =  NSMutableAttributedString(string: "Superman", attributes: [NSAttributedString.Key.font : UIFont(name: "SairaRoman-Regular", size: 24)!, NSAttributedString.Key.foregroundColor : UIColor.white])
-    let girlTitle =  NSMutableAttributedString(string: "Supergirl", attributes: [NSAttributedString.Key.font : UIFont(name: "SairaRoman-Regular", size: 24)!, NSAttributedString.Key.foregroundColor : UIColor.white])
+    let menuArray = ["Профиль","Прогресс","Программы","Калькулятор","Мышцы"]
+    let reuseIdentifier = "Cell"
+    let cellNibName = "MenuCell"
+    let girlImage = UIImage(named: "girlBackgroundCut")
+    let manlImage = UIImage(named: "manBackgroundCut")
+    let manTitle = "Superman"
+    let girlTitle = "Supergirl"
 }
