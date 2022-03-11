@@ -20,8 +20,6 @@ class HomeScreenViewController : UIViewController,Storyboarded{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // In this place setting works, when used in coordinator does not/
-        self.navigationController?.hidesBarsOnSwipe = true
         //tableview delegates
         menuTable.dataSource = self
         menuTable.delegate = self

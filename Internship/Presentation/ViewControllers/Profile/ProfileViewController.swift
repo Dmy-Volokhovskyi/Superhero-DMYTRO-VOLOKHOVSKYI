@@ -9,6 +9,14 @@ import UIKit
 
 class ProfileViewController: UIViewController,Storyboarded {
 
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var whiteBackgroundImg: UIImageView!
+    @IBOutlet weak var cameraDefaultImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var enterNameTextView: UITextField!
+    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var addOptionsButton: UIButton!
+    
     weak var coordinator : MainCoordinator?
     let profileViewModel = ProfileViewModel()
     
@@ -16,9 +24,15 @@ class ProfileViewController: UIViewController,Storyboarded {
         super.viewDidLoad()
         self.title = profileViewModel.barButtonTitle
         self.navigationController?.navigationBar.isHidden = false
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isOpaque = true
+        setUpInterface()
+        view.layoutIfNeeded()
     }
-    
+    func setUpInterface (){
+        backgroundImage.image = profileViewModel.getbackgroundImage()
+//        whiteBackgroundImg.backgroundColor = profileViewModel.whiteBackgroundColor
+//        cameraDefaultImage.image = profileViewModel.cameraImage
+    }
 
     /*
     // MARK: - Navigation

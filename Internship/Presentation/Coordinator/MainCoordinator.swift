@@ -33,8 +33,8 @@ class MainCoordinator : Coordinator {
         let vc = HomeScreenViewController.instantiate()
         vc.coordinator = self
         vc.navigationItem.hidesBackButton = true
-        vc.navigationController?.navigationBar.isHidden = true
-        vc.navigationController?.hidesBarsOnSwipe = true
+        vc.navigationController?.navigationBar.isHidden = false
+//        hide
         navigationController.pushViewController(vc, animated: false)
     }
 }
