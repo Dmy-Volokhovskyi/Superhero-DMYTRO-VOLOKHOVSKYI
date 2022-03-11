@@ -28,7 +28,7 @@ struct ProfileViewModel {
         if gender == "SUPERGIRL"{
             return girlImage ?? UIImage()
         }else {
-           return manlImage ?? UIImage()
+            return manlImage ?? UIImage()
         }
     }
 }

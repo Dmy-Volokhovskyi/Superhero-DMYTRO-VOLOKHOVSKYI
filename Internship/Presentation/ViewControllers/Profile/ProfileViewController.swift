@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController,Storyboarded {
-
+    
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var whiteBackgroundImg: UIImageView!
@@ -53,23 +53,23 @@ class ProfileViewController: UIViewController,Storyboarded {
         self.title = profileViewModel.barButtonTitle
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @objc  func savedButtonPressed (){
- 
+        
     }
     @IBAction func addOptionsPressed(_ sender: UIButton) {
         self.hideTableViewConstraint.constant = 11
         UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
+            self.view.layoutIfNeeded()
         }
         for fontFamilyName in UIFont.familyNames{
             for fontName in UIFont.fontNames(forFamilyName: fontFamilyName){

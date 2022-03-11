@@ -66,7 +66,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-ty-5aI">
-                                                <rect key="frame" x="119" y="399" width="252" height="1"/>
+                                                <rect key="frame" x="121" y="399" width="250" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="rN4-m2-heO"/>
@@ -111,7 +111,7 @@
                                             <constraint firstAttribute="trailing" secondItem="nnf-ty-5aI" secondAttribute="trailing" constant="43" id="WMG-lT-ZGv"/>
                                             <constraint firstItem="5cd-OA-Wgt" firstAttribute="leading" secondItem="OVC-z4-7cq" secondAttribute="leading" constant="43" id="YgH-4N-Mb4"/>
                                             <constraint firstItem="nnf-ty-5aI" firstAttribute="top" secondItem="Kf0-Bq-jM2" secondAttribute="bottom" constant="1" id="d7Z-Xi-a0s"/>
-                                            <constraint firstItem="nnf-ty-5aI" firstAttribute="leading" secondItem="OVC-z4-7cq" secondAttribute="leading" constant="119" id="kdb-77-Dfk"/>
+                                            <constraint firstItem="nnf-ty-5aI" firstAttribute="leading" secondItem="OVC-z4-7cq" secondAttribute="leading" constant="121" id="kdb-77-Dfk"/>
                                             <constraint firstItem="78k-br-alr" firstAttribute="top" secondItem="nnf-ty-5aI" secondAttribute="bottom" constant="330" id="mYK-jg-G5g"/>
                                             <constraint firstAttribute="bottom" secondItem="Tz2-MC-19l" secondAttribute="bottom" constant="631" id="xk0-vB-Iwa"/>
                                             <constraint firstItem="5cd-OA-Wgt" firstAttribute="top" secondItem="nnf-ty-5aI" secondAttribute="bottom" constant="11" id="zut-nd-4Ms"/>
