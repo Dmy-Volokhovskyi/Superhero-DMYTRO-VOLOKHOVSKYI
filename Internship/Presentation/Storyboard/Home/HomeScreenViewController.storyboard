@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,25 +13,17 @@
             <objects>
                 <viewController storyboardIdentifier="HomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="HomeScreenViewController" customModule="Internship_Dmytro_Volokhovskyi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="huc-bp-4gx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v5K-15-LS1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5K-15-LS1">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                     </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-OU-rdd">
-                                        <rect key="frame" x="43" y="496" width="328" height="360"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="360" id="v8v-Op-orl"/>
-                                        </constraints>
-                                        <sections/>
-                                    </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-ba-z0M">
-                                        <rect key="frame" x="149" y="80" width="116" height="38"/>
+                                        <rect key="frame" x="137" y="80" width="116" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="fHB-tu-Hop"/>
                                             <constraint firstAttribute="width" constant="116" id="jpw-Lp-Dh5"/>
@@ -40,19 +32,25 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-OU-rdd">
+                                        <rect key="frame" x="28" y="375" width="334" height="427"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <sections/>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qSF-2C-Ile" firstAttribute="trailing" secondItem="Qdm-OU-rdd" secondAttribute="trailing" constant="43" id="8B4-dY-hVY"/>
-                                    <constraint firstItem="v5K-15-LS1" firstAttribute="bottom" secondItem="Qdm-OU-rdd" secondAttribute="bottom" constant="40" id="Cls-fJ-Hel"/>
+                                    <constraint firstItem="qSF-2C-Ile" firstAttribute="trailing" secondItem="Qdm-OU-rdd" secondAttribute="trailing" constant="28" id="8B4-dY-hVY"/>
+                                    <constraint firstItem="v5K-15-LS1" firstAttribute="bottom" secondItem="Qdm-OU-rdd" secondAttribute="bottom" constant="42" id="Cls-fJ-Hel"/>
                                     <constraint firstItem="qSF-2C-Ile" firstAttribute="width" secondItem="v5K-15-LS1" secondAttribute="width" id="Dhp-C8-GWz"/>
                                     <constraint firstItem="Grg-ba-z0M" firstAttribute="centerX" secondItem="huc-bp-4gx" secondAttribute="centerX" id="JOE-ty-doI"/>
                                     <constraint firstItem="v5K-15-LS1" firstAttribute="trailing" secondItem="a24-Es-Akq" secondAttribute="trailing" id="KCg-Uj-fHG"/>
+                                    <constraint firstItem="Qdm-OU-rdd" firstAttribute="top" secondItem="Grg-ba-z0M" secondAttribute="bottom" constant="257" id="VX7-oc-FBE"/>
                                     <constraint firstItem="v5K-15-LS1" firstAttribute="top" secondItem="a24-Es-Akq" secondAttribute="top" id="gHL-VX-fBb"/>
                                     <constraint firstItem="v5K-15-LS1" firstAttribute="bottom" secondItem="a24-Es-Akq" secondAttribute="bottom" id="gSi-B2-eY6"/>
                                     <constraint firstItem="v5K-15-LS1" firstAttribute="leading" secondItem="a24-Es-Akq" secondAttribute="leading" id="ha8-fT-yqd"/>
                                     <constraint firstItem="v5K-15-LS1" firstAttribute="height" secondItem="qSF-2C-Ile" secondAttribute="height" priority="750" id="mGB-pI-x7E"/>
                                     <constraint firstItem="Grg-ba-z0M" firstAttribute="top" secondItem="v5K-15-LS1" secondAttribute="top" constant="80" id="qBk-SC-U94"/>
-                                    <constraint firstItem="Qdm-OU-rdd" firstAttribute="leading" secondItem="qSF-2C-Ile" secondAttribute="leading" constant="43" id="qJO-ZW-7el"/>
+                                    <constraint firstItem="Qdm-OU-rdd" firstAttribute="leading" secondItem="qSF-2C-Ile" secondAttribute="leading" constant="28" id="qJO-ZW-7el"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="a24-Es-Akq"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="qSF-2C-Ile"/>
@@ -76,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="98.4375"/>
+            <point key="canvasLocation" x="33.846153846153847" y="98.104265402843595"/>
         </scene>
     </scenes>
     <resources>
