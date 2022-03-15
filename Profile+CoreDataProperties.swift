@@ -17,6 +17,7 @@ extension Profile {
     }
 
     @NSManaged public var sex: String?
+    @NSManaged public var name: String?
 
 }
 

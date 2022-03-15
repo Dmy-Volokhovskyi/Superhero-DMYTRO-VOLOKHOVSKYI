@@ -22,6 +22,12 @@
 		7C1B1E5A27BC126400A42B88 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5927BC126400A42B88 /* Coordinator.swift */; };
 		7C1B1E5C27BC15FF00A42B88 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5B27BC15FF00A42B88 /* Storyboarded.swift */; };
 		7C1B1E5E27BC178700A42B88 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B1E5D27BC178700A42B88 /* MainCoordinator.swift */; };
+		7C2DF5A327DFCBE700D46EA6 /* MainMenuFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2DF5A227DFCBE700D46EA6 /* MainMenuFooter.xib */; };
+		7C2DF5A527DFCD5B00D46EA6 /* MainMenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DF5A427DFCD5B00D46EA6 /* MainMenuFooter.swift */; };
+		7C2DF5A927DFD38300D46EA6 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DF5A727DFD38300D46EA6 /* SettingsTableViewCell.swift */; };
+		7C2DF5AA27DFD38300D46EA6 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2DF5A827DFD38300D46EA6 /* SettingsTableViewCell.xib */; };
+		7C2DF5AC27DFDA2E00D46EA6 /* MainMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DF5AB27DFDA2E00D46EA6 /* MainMenuHeader.swift */; };
+		7C2DF5AE27DFDAA500D46EA6 /* MainMenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2DF5AD27DFDAA500D46EA6 /* MainMenuHeader.xib */; };
 		7C41EF4E27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C41EF4C27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf */; };
 		7C41EF4F27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C41EF4D27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf */; };
 		7C41EF5627C4488B0051B183 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C41EF5527C4488B0051B183 /* HomeScreenModel.swift */; };
@@ -92,6 +98,12 @@
 		7C1B1E5927BC126400A42B88 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7C1B1E5B27BC15FF00A42B88 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7C1B1E5D27BC178700A42B88 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		7C2DF5A227DFCBE700D46EA6 /* MainMenuFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuFooter.xib; sourceTree = "<group>"; };
+		7C2DF5A427DFCD5B00D46EA6 /* MainMenuFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuFooter.swift; sourceTree = "<group>"; };
+		7C2DF5A727DFD38300D46EA6 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		7C2DF5A827DFD38300D46EA6 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		7C2DF5AB27DFDA2E00D46EA6 /* MainMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuHeader.swift; sourceTree = "<group>"; };
+		7C2DF5AD27DFDAA500D46EA6 /* MainMenuHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuHeader.xib; sourceTree = "<group>"; };
 		7C41EF4C27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		7C41EF4D27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
 		7C41EF5527C4488B0051B183 /* HomeScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeScreenModel.swift; path = Internship/Presentation/ViewModel/Home/HomeScreenModel.swift; sourceTree = SOURCE_ROOT; };
@@ -244,6 +256,8 @@
 		7C1B1E5127BC0F8C00A42B88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C2DF59527DFAA5100D46EA6 /* Footers */,
+				7C2DF59427DFAA4900D46EA6 /* Headers */,
 				7C469FCC27C50BEA0086E772 /* Cells */,
 			);
 			path = Views;
@@ -285,6 +299,49 @@
 				7C1B1E5927BC126400A42B88 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7C2DF59427DFAA4900D46EA6 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7C2DF59727DFAA7300D46EA6 /* MainMenuHeader */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		7C2DF59527DFAA5100D46EA6 /* Footers */ = {
+			isa = PBXGroup;
+			children = (
+				7C2DF59627DFAA5D00D46EA6 /* MainMenuFooter */,
+			);
+			path = Footers;
+			sourceTree = "<group>";
+		};
+		7C2DF59627DFAA5D00D46EA6 /* MainMenuFooter */ = {
+			isa = PBXGroup;
+			children = (
+				7C2DF5A227DFCBE700D46EA6 /* MainMenuFooter.xib */,
+				7C2DF5A427DFCD5B00D46EA6 /* MainMenuFooter.swift */,
+			);
+			path = MainMenuFooter;
+			sourceTree = "<group>";
+		};
+		7C2DF59727DFAA7300D46EA6 /* MainMenuHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7C2DF5AB27DFDA2E00D46EA6 /* MainMenuHeader.swift */,
+				7C2DF5AD27DFDAA500D46EA6 /* MainMenuHeader.xib */,
+			);
+			path = MainMenuHeader;
+			sourceTree = "<group>";
+		};
+		7C2DF5A627DFD35000D46EA6 /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				7C2DF5A727DFD38300D46EA6 /* SettingsTableViewCell.swift */,
+				7C2DF5A827DFD38300D46EA6 /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsCell;
 			sourceTree = "<group>";
 		};
 		7C41EF4B27C4180A0051B183 /* Fonts */ = {
@@ -335,6 +392,7 @@
 		7C469FCD27C50BF50086E772 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				7C2DF5A627DFD35000D46EA6 /* SettingsCell */,
 				7C469FD327C50C3B0086E772 /* MenuCell */,
 			);
 			path = TableCells;
@@ -668,6 +726,7 @@
 				7C469FE727C56A220086E772 /* MuscleViewController.storyboard in Resources */,
 				7C469FE127C56A020086E772 /* ProgressViewController.storyboard in Resources */,
 				7C469FD227C50C360086E772 /* MenuCell.xib in Resources */,
+				7C2DF5AE27DFDAA500D46EA6 /* MainMenuHeader.xib in Resources */,
 				7C41EF4E27C4183F0051B183 /* Saira-VariableFont_wdth,wght.ttf in Resources */,
 				7C1B1E2627BC08FA00A42B88 /* Assets.xcassets in Resources */,
 				7C469FE527C56A160086E772 /* CalculatorViewController.storyboard in Resources */,
@@ -675,6 +734,8 @@
 				7C1190D427BE567B00D89565 /* StartViewController.storyboard in Resources */,
 				7C1B1E2127BC08F800A42B88 /* Main.storyboard in Resources */,
 				7C41EF4F27C4183F0051B183 /* Saira-Italic-VariableFont_wdth,wght.ttf in Resources */,
+				7C2DF5AA27DFD38300D46EA6 /* SettingsTableViewCell.xib in Resources */,
+				7C2DF5A327DFCBE700D46EA6 /* MainMenuFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,13 +776,16 @@
 				7C469FEF27C56A680086E772 /* CalculatorViewController.swift in Sources */,
 				7C1B1E2427BC08F800A42B88 /* Profile.xcdatamodeld in Sources */,
 				7C41EF5627C4488B0051B183 /* HomeScreenModel.swift in Sources */,
+				7C2DF5A927DFD38300D46EA6 /* SettingsTableViewCell.swift in Sources */,
 				7C469FD127C50C360086E772 /* MenuCell.swift in Sources */,
 				7C1B1E5C27BC15FF00A42B88 /* Storyboarded.swift in Sources */,
 				7CC9C4CE27C3CB3C001F59C2 /* Profile+CoreDataProperties.swift in Sources */,
 				7C469FF527C56A980086E772 /* ProgressViewModel.swift in Sources */,
+				7C2DF5AC27DFDA2E00D46EA6 /* MainMenuHeader.swift in Sources */,
 				7C469FD727C569830086E772 /* MainCoordinator + Progress.swift in Sources */,
 				7CAE1E5627C2D47A00988335 /* HomeScreenViewController.swift in Sources */,
 				7C469FED27C56A5E0086E772 /* ProgramsViewController.swift in Sources */,
+				7C2DF5A527DFCD5B00D46EA6 /* MainMenuFooter.swift in Sources */,
 				7C469FDD27C569B00086E772 /* MainCoordinator+Muscle.swift in Sources */,
 				7C469FF927C56AAB0086E772 /* CalculatorViewModel.swift in Sources */,
 				7C469FD927C5698F0086E772 /* MainCoordinator + Programs.swift in Sources */,

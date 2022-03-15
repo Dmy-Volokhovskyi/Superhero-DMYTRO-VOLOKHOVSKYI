@@ -25,8 +25,8 @@ class StartViewController: UIViewController,Storyboarded {
         configureUI()
     }
     override func viewDidLayoutSubviews() {
-        topGirlGradient.addGradient()
-        bottomManGradient.addGradient(colors: [.black, UIColor.clear], locations: [0.27,1], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 0.0, y: 0.0), type: .axial)
+        topGirlGradient.addGradient(frame: topGirlGradient.frame)
+        bottomManGradient.addGradient(colors: [.black, UIColor.clear], locations: [0.27,1], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 0.0, y: 0.0), type: .axial, frame: bottomManGradient.frame)
         supermanButton.layer.cornerRadius = supermanButton.frame.size.height/2
         supergirlButton.layer.cornerRadius = supergirlButton.frame.size.height/2
     }

@@ -11,6 +11,7 @@ import UIKit
 struct HomeScreenModel {
     
     let gender = ProfileManager.sharedInstance.userProfile?.sex ?? ""
+    let name  = ProfileManager.sharedInstance.userProfile?.name ?? ""
     let menuArray = ["Профиль","Прогресс","Программы","Калькулятор","Мышцы"]
     let reuseIdentifier = "Cell"
     let cellNibName = "MenuCell"

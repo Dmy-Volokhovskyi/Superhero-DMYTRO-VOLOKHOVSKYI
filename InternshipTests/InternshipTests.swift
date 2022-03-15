@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Internship
+
 
 class InternshipTests: XCTestCase {
 
