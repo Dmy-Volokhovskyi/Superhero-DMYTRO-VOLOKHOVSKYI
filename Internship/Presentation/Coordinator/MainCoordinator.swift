@@ -42,4 +42,15 @@ class MainCoordinator : Coordinator {
         navigationController.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "AvenirNextCondensed-DemiBoldItalic", size: 40)!], for: .normal)
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    
+    
+     func showOptions () {
+        let vc = ProfileViewController.instantiate()
+        vc.coordinator = self
+  
+
+        vc.navigationController?.navigationBar.isHidden = true
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

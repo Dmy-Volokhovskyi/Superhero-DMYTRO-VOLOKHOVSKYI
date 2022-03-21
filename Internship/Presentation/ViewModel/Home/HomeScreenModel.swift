@@ -12,11 +12,11 @@ struct HomeScreenModel {
     
     let gender = ProfileManager.sharedInstance.userProfile?.sex ?? ""
     let name  = ProfileManager.sharedInstance.userProfile?.name ?? ""
-    let menuArray = ["Профиль","Прогресс","Программы","Калькулятор","Мышцы"]
+    let menuArray = ["Профилі","Прогресс","Программы","Калькулятор","Мышцы"]
     let reuseIdentifier = "Cell"
     let cellNibName = "MenuCell"
-    let girlImage = UIImage(named: "girlBackgroundCut")
-    let manlImage = UIImage(named: "manBackgroundCut")
+    let girlImage = "girlBackgroundCut"
+    let manlImage = "manBackgroundCut"
     let manTitle = "Superman"
     let girlTitle = "Supergirl"
     

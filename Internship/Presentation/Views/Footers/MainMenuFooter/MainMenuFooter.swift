@@ -7,12 +7,17 @@
 
 import UIKit
 class MainMenuFooter: UITableViewHeaderFooterView {
-    @IBOutlet weak var instructionLabel: UILabel!
-
+    
+    @IBOutlet private weak var instructionLabel: UILabel!
+    static let reuseID = "MainMenuFooter"
+    
     func setUpFooter (with labelText : String){
-                instructionLabel.text = labelText
-                instructionLabel.textColor = UIColor(named: "descriptionText")
-                instructionLabel.font = UIFont(name: "SairaRoman-Regular", size: 16.0)
+        let backgroundView = UIView(frame: self.bounds)
+        backgroundView.backgroundColor = UIColor.clear
+        self.backgroundView = backgroundView
+        instructionLabel.text = labelText
+        instructionLabel.textColor = UIColor(named: "descriptionText")
+        instructionLabel.font = UIFont(name: "SairaRoman-Regular", size: 16.0)
         
     }
 }

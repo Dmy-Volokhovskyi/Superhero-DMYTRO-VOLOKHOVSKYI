@@ -15,8 +15,8 @@ struct ProfileViewModel {
     let placeholderText = "Enter Your Name"
     let instructionText = "Select an option to display on the main screen"
     let addOptionsButtonText = "Add Options"
-    let girlImage = UIImage(named: "girlBackgroundCut")
-    let manlImage = UIImage(named: "manBackgroundCut")
+    let girlImage = "girlBackgroundCut"
+    let manlImage =  "manBackgroundCut"
     let whiteBackgroundColor = UIColor(named: "whiteBackground")
     
     var cameraImage : UIImage {
@@ -25,11 +25,11 @@ struct ProfileViewModel {
         return cameraImage!
     }
     
-    func getbackgroundImage () -> UIImage{
+    func getbackgroundImage () -> String{
         if profile?.sex == "SUPERGIRL"{
-            return girlImage ?? UIImage()
+            return girlImage
         }else {
-            return manlImage ?? UIImage()
+            return manlImage
         }
     }
 }

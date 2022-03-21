@@ -8,7 +8,12 @@
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var atributeName: UILabel!
+    @IBOutlet weak var statusSwitch: UISwitch!
+    @IBOutlet weak var measurementUnit: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    static let cellID = "SettingsTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +25,13 @@ class SettingsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func setCell() {
+        atributeName.text = "Banana"
+        measurementUnit.text = "SM"
+        quantity.text = "179"
+        atributeName.textColor = .white
+        measurementUnit.textColor = .white
+        quantity.textColor = .white
+        
         backgroundColor = .clear
     }
 }

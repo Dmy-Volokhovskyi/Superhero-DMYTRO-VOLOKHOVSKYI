@@ -2,7 +2,7 @@
 //  Profile+CoreDataClass.swift
 //  Internship Dmytro Volokhovskyi
 //
-//  Created by Дмитро Волоховський on 21/02/2022.
+//  Created by Дмитро Волоховський on 20/03/2022.
 //
 //
 
@@ -11,5 +11,5 @@ import CoreData
 
 @objc(Profile)
 public class Profile: NSManagedObject {
-   
+
 }

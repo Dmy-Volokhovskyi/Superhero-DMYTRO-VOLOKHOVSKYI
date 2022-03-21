@@ -11,6 +11,8 @@ class MenuCell: UITableViewCell {
 
     @IBOutlet weak var menuItemLabel: UILabel!
     @IBOutlet weak var bottomLine: UIView!
+    static let cellID = "MenuCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

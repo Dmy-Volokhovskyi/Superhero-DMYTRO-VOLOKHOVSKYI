@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kxb-XA-z20">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <tableView contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-5f-gFa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,6 +27,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addOptionsButtonpressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZg-KS-a18"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -37,20 +37,16 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xRV-Sy-lEk" secondAttribute="trailing" constant="43" id="0uL-u6-jBY"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="1za-wQ-bIO"/>
-                            <constraint firstAttribute="trailing" secondItem="Kxb-XA-z20" secondAttribute="trailing" id="25L-97-GWk"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="37a-wl-wDd"/>
-                            <constraint firstItem="Kxb-XA-z20" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="3Cg-Lc-ePx"/>
-                            <constraint firstAttribute="bottom" secondItem="Kxb-XA-z20" secondAttribute="bottom" id="CUl-8B-LmQ"/>
                             <constraint firstItem="xRV-Sy-lEk" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottomMargin" id="Ko4-Fb-bE8"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="OaK-X1-bhx"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="PCz-ss-6ys"/>
                             <constraint firstItem="xRV-Sy-lEk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="fhy-yO-6mR"/>
-                            <constraint firstItem="Kxb-XA-z20" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ufa-Dv-kzi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addOptionsButton" destination="xRV-Sy-lEk" id="0Lc-1n-4pX"/>
-                        <outlet property="backgroundImage" destination="Kxb-XA-z20" id="05I-27-hvP"/>
+                        <outlet property="addOptionsButton" destination="xRV-Sy-lEk" id="Zdy-0F-QkR"/>
+                        <outlet property="backgroundView" destination="5EZ-qb-Rvc" id="k1b-0I-hyX"/>
                         <outlet property="menuTableView" destination="sb7-5f-gFa" id="PUC-MO-ynf"/>
                     </connections>
                 </viewController>

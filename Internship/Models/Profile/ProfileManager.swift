@@ -14,18 +14,36 @@ class ProfileManager {
     static let sharedInstance = ProfileManager()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var userProfile : Profile?
+    {
+        didSet {
+            loadBodyParameters()
+            print(parameterArray.count)
+        }
+    }
+    var chosenParametersArray = [BodyParameter]()
+    
+    var parameterArray : [BodyParameter] = [] {
+        didSet {
+            for parameter in parameterArray {
+                if parameter.isChosen == true {
+                    chosenParametersArray.append(parameter)
+                }
+            }
+        }
+    }
     
     
     func createDefaultProfile (with sex : String) {
         userProfile = Profile(context: context)
         userProfile?.sex = sex
-        saveProfile()
+        saveData()
     }
     func saveProfileWith (with sex : String, with name : String){
         let request : NSFetchRequest<Profile> = Profile.fetchRequest()
         request.returnsObjectsAsFaults = false
-        saveProfile()
+        saveData()
         do{
             let userProfileArray =  try context.fetch(request)
             if userProfileArray != [] {
@@ -33,9 +51,7 @@ class ProfileManager {
                 userProfile = userProfileArray[0]
                 userProfile?.sex = sex
                 userProfile?.setValue(name, forKey: "name")
-                print(userProfile?.sex)
-                print(userProfile?.name)
-                saveProfile()
+                saveData()
             }
         }catch {
             print ( "Error fetching data \(error)" )
@@ -43,7 +59,7 @@ class ProfileManager {
 
     }
     
-    func saveProfile() {
+    func saveData() {
         do {
           try context.save()
         }catch{
@@ -54,7 +70,7 @@ class ProfileManager {
     func loadProfileInformation() {
         let request : NSFetchRequest<Profile> = Profile.fetchRequest()
         request.returnsObjectsAsFaults = false
-        saveProfile()
+        saveData()
         do{
             let userProfileArray =  try context.fetch(request)
             if userProfileArray != [] {
@@ -63,6 +79,19 @@ class ProfileManager {
             }
         }catch {
             print ( "Error fetching data \(error)" )
+        }
+    }
+    
+    func loadBodyParameters (with request : NSFetchRequest<BodyParameter> = BodyParameter.fetchRequest(),predicate: NSPredicate? = nil)
+    {
+        
+        let parameterPredicate = NSPredicate(format: "parentProfile.name MATCHES %@", userProfile!.name!)
+            request.predicate = parameterPredicate
+        do{
+          parameterArray =  try context.fetch(request)
+            print(parameterArray.count)
+        }catch {
+            print (error)
         }
     }
 }

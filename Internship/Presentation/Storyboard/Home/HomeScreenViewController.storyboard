@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJS-aO-kk4">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Igi-cU-3c2">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
@@ -68,6 +65,9 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0yK-W3-ky4">
                                                 <rect key="frame" x="28" y="362" width="334" height="382"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="382" id="cMc-b2-ubj"/>
+                                                </constraints>
                                             </tableView>
                                         </subviews>
                                         <constraints>
@@ -99,15 +99,10 @@
                             <constraint firstItem="Igi-cU-3c2" firstAttribute="leading" secondItem="xRw-I6-N35" secondAttribute="leading" id="0xm-yo-tqk"/>
                             <constraint firstItem="Igi-cU-3c2" firstAttribute="trailing" secondItem="xRw-I6-N35" secondAttribute="trailing" id="Asg-Zw-Ymv"/>
                             <constraint firstAttribute="bottom" secondItem="Igi-cU-3c2" secondAttribute="bottom" id="OrK-d5-7yR"/>
-                            <constraint firstAttribute="trailing" secondItem="zJS-aO-kk4" secondAttribute="trailing" id="Vri-0R-Jb6"/>
-                            <constraint firstItem="zJS-aO-kk4" firstAttribute="leading" secondItem="XUu-3i-rW9" secondAttribute="leading" id="aD6-4g-Yjj"/>
-                            <constraint firstAttribute="bottom" secondItem="zJS-aO-kk4" secondAttribute="bottom" id="fJx-fX-q9u"/>
-                            <constraint firstItem="zJS-aO-kk4" firstAttribute="top" secondItem="XUu-3i-rW9" secondAttribute="top" id="iK8-mJ-FkK"/>
                             <constraint firstItem="Igi-cU-3c2" firstAttribute="top" secondItem="XUu-3i-rW9" secondAttribute="top" id="r4K-it-65c"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundImage" destination="zJS-aO-kk4" id="UTG-gk-JNM"/>
                         <outlet property="genderLabel" destination="lEe-1W-NZY" id="mVZ-kI-qts"/>
                         <outlet property="menuTable" destination="0yK-W3-ky4" id="9sD-GB-zC4"/>
                         <outlet property="nameLabel" destination="QeD-Zu-nfq" id="Ezn-WK-1TW"/>

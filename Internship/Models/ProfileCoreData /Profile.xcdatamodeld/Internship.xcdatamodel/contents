@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BodyParameter" representedClassName="BodyParameter" syncable="YES">
+        <attribute name="isChosen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="measuredIn" optional="YES" attributeType="String"/>
+        <attribute name="measureValue" optional="YES" attributeType="String"/>
+        <attribute name="parameterName" optional="YES" attributeType="String"/>
+        <relationship name="parentProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="parameters" inverseEntity="Profile"/>
+    </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sex" optional="YES" attributeType="String"/>
+        <relationship name="parameters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BodyParameter" inverseName="parentProfile" inverseEntity="BodyParameter"/>
     </entity>
     <elements>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="Profile" positionX="80.37677001953125" positionY="-109.6678619384766" width="128" height="88"/>
+        <element name="BodyParameter" positionX="69.15765380859375" positionY="56.40304565429688" width="128" height="118"/>
     </elements>
 </model>
