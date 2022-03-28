@@ -19,6 +19,7 @@ class MainMenuHeader: UITableViewHeaderFooterView, UITextFieldDelegate {
     @IBOutlet private weak var enterNameTextView: UITextField!
     private var profileViewModel : ProfileViewModel!
     
+    
     var delegate : MainMenuHeaderDelegate?
     
     func setupHeader(_ model : ProfileViewModel) {
@@ -46,17 +47,18 @@ class MainMenuHeader: UITableViewHeaderFooterView, UITextFieldDelegate {
         checkForState()
     }
     
+    @IBAction func pickImage(_ sender: UIButton) {
+        self.delegate?.presentImagePicker()
+        
+    }
     func checkForState (){
         if let text = enterNameTextView.text {
             if text == profileViewModel.profile?.name || text == "" {
-                print("Match")
                 lineColorView.backgroundColor = .orange
                 self.delegate?.gotData(self, text, false)
             }else {
                 lineColorView.backgroundColor = .white
                 self.delegate?.gotData(self, text, true)
-                print("DontMatch")
-                
             }
         }
     }

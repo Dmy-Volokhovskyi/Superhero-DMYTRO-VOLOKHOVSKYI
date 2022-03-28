@@ -19,8 +19,10 @@ struct HomeScreenModel {
     let manlImage = "manBackgroundCut"
     let manTitle = "Superman"
     let girlTitle = "Supergirl"
+    var modelArray : [BodyParameterModel] = []
+    var toggledArray : [BodyParameterModel] = []
+
     
-    // perform transition to new screen
     func categorySelected (with index : Int, coordinator : MainCoordinator)  {
         
        let menuCategory = menuArray[index]
@@ -39,5 +41,15 @@ struct HomeScreenModel {
             coordinator.profile()
         }
     }
-
+   mutating func formToggledArray () -> [BodyParameterModel]{
+       modelArray = BodyParameterStorage.sharedInstance.formOprableArray()
+       toggledArray = []
+        for parameter in modelArray {
+            if parameter.isToggled == true{
+                self.toggledArray.append(parameter)
+            }
+        }
+       print(" toggle \(toggledArray.count)  ")     
+       return toggledArray
+    }
 }

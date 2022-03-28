@@ -25,9 +25,11 @@ class SelectOptionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setUp(parameter : BodyParameter?) {
+    func setUp(parameter : BodyParameterModel?) {
         if let parameter = parameter {
+            self.backgroundColor = .clear
             optionNameLabel.text = parameter.parameterName
+            optionNameLabel.textColor = .white
             let checkmark = UIImage(named: "Check")
             let empty = UIImage(named: "Box")
             

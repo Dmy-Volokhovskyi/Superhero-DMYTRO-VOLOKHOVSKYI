@@ -8,33 +8,46 @@
 import Foundation
 import UIKit
 
-class HomeScreenViewController : BaseViewViewController{
+class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSource{
+
+    
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuTable: UITableView!
     @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var parametersCollectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var backgroundImage: UIImageView!
+    //    @IBOutlet weak var backgroundImage: UIImageView!
     
     weak var coordinator : MainCoordinator?
-    let homeScreenModel = HomeScreenModel()
+    var homeScreenModel = HomeScreenModel()
+    var toggleArray : [BodyParameterModel] = [] {
+        didSet{
+            parametersCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableview delegates
         menuTable.dataSource = self
         menuTable.delegate = self
+        parametersCollectionView.delegate = self
+        parametersCollectionView.dataSource = self
         //regiseter cell
         menuTable!.register(UINib.init(nibName: MenuCell.cellID, bundle: nil), forCellReuseIdentifier: MenuCell.cellID)
+        parametersCollectionView.register(UINib(nibName:ParametersCollectionViewCell.cellID, bundle: nil), forCellWithReuseIdentifier:ParametersCollectionViewCell.cellID)
         setInterface()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
-
-       scrollView.setContentOffset(.zero, animated: true)
-       navigationController?.navigationBar.isHidden = true
+        ProfileManager.sharedInstance.loadBodyParameters()
+        scrollView.setContentOffset(.zero, animated: true)
+        navigationController?.navigationBar.isHidden = true
         nameLabel.text = ProfileManager.sharedInstance.userProfile?.name ?? ""
+        toggleArray = homeScreenModel.formToggledArray()
     }
-
+    
     
     private func setInterface() {
         // Get information for correct image and text
@@ -47,6 +60,10 @@ class HomeScreenViewController : BaseViewViewController{
             addImage(homeScreenModel.manlImage)
             genderLabel.text = homeScreenModel.manTitle
         }
+        
+        toggleArray = homeScreenModel.formToggledArray()
+        parametersCollectionView.reloadData()
+        parametersCollectionView.backgroundColor = .clear
         // Top label Set up
         genderLabel.textColor = .white
         genderLabel.font = UIFont(name: "SairaRoman-Regular", size: 24)
@@ -57,6 +74,7 @@ class HomeScreenViewController : BaseViewViewController{
         nameLabel.textColor = UIColor(named: "yellowUIColor")
         nameLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)
     }
+
 }
 
 extension HomeScreenViewController : UITableViewDataSource {
@@ -76,7 +94,7 @@ extension HomeScreenViewController : UITableViewDataSource {
 }
 
 extension HomeScreenViewController : UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 4
     }
@@ -91,4 +109,21 @@ extension HomeScreenViewController : UITableViewDelegate {
         homeScreenModel.categorySelected(with: indexPath.section, coordinator: coordinator!)
     }
 }
-
+extension HomeScreenViewController : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(toggleArray.count)
+        return toggleArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParametersCollectionViewCell.cellID, for: indexPath) as! ParametersCollectionViewCell
+        cell.setUpCell(with: toggleArray[indexPath.item])
+        return cell
+    }
+}
+extension HomeScreenViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 84)
+    }
+}

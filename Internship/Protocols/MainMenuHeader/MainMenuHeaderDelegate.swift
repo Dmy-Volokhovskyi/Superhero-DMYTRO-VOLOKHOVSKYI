@@ -9,4 +9,5 @@ import Foundation
 
 protocol MainMenuHeaderDelegate {
     func gotData (_ mainMenuHeader : MainMenuHeader, _ value : String, _ buttonState : Bool)
+    func presentImagePicker ()
 }

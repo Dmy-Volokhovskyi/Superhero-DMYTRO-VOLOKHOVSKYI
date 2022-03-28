@@ -6,39 +6,57 @@
 //
 
 import UIKit
-
+import CoreData
 class ProfileViewController: BaseViewViewController {
     
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var addOptionsButton: UIButton!
     
-    
+    var chosenParametersArray = [BodyParameterModel]()
+    var parameterArray : [BodyParameterModel] = [] {
+        didSet{
+            chosenParametersArray = []
+            for parameter in parameterArray {
+                if parameter.isChosen == true {
+                    chosenParametersArray.append(parameter)
+                  print(  " shozen \(chosenParametersArray.count)")
+                }
+            }
+            dataHasChanged = profileViewModel.checkIfDifferent(newArray: parameterArray)
+            print(parameterArray.count)
+            updateButtonState()
+            menuTableView.reloadData()
+        }
+    }
     weak var coordinator : MainCoordinator?
     let profileViewModel = ProfileViewModel()
     var nameToSave : String!
-    let savedButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savedButtonPressed))
-    var transition = AnimationManager(animationDuration: 1.0, animationType: .present)
+    private var savedButton: UIBarButtonItem?
+    var nameHasChanged = false
+    var dataHasChanged = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.delegate = self
-        // SetNav bar
+        
+        savedButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savedButtonPressed))
+        
+        parameterArray = ProfileManager.sharedInstance.operableArray
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.isOpaque = true
-        //Set tableView Header and Footer
+        
         menuTableView.register(UINib(nibName: MainMenuHeader.reuseID, bundle: nil), forHeaderFooterViewReuseIdentifier: MainMenuHeader.reuseID)
         menuTableView.register(UINib(nibName: MainMenuFooter.reuseID, bundle: nil), forHeaderFooterViewReuseIdentifier: MainMenuFooter.reuseID)
         menuTableView!.register(UINib.init(nibName: SettingsTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.cellID)
         menuTableView.backgroundColor = UIColor.clear
-        // Set Delegate Methods
+        
         menuTableView.dataSource = self
         menuTableView.delegate = self
-        //Set Interface
+        
         setUpInterface()
     }
-    
+
     func setUpInterface (){
         //Set back image
         addImage(profileViewModel.getbackgroundImage())
@@ -55,29 +73,37 @@ class ProfileViewController: BaseViewViewController {
     
     @objc  func savedButtonPressed (){
         //Save into CoreData
-        ProfileManager.sharedInstance.saveProfileWith(with: profileViewModel.profile!.sex ?? " " , with: nameToSave)
-        savedButton.isEnabled = false
+        profileViewModel.saveOptionsArray(parameters: parameterArray, and: nameToSave)
+        parameterArray = profileViewModel.getData()
+        savedButton?.isEnabled = false
     }
     
     @IBAction func addOptionsButtonpressed(_ sender: UIButton) {
-        print("Saved")
-        let detailVC = ProfileViewController.instantiate()
-        navigationController?.modalPresentationStyle = .custom
-        navigationController?.pushViewController(detailVC, animated: true)
-
-//        coordinator?.showOptions()
+        
+        coordinator?.showOptions(model: profileViewModel, with: self, and: parameterArray)
+    }
+    
+    func updateButtonState() {
+        if nameHasChanged || dataHasChanged {
+            savedButton?.isEnabled = true
+        }else {
+            savedButton?.isEnabled = false
+        }
     }
     
 }
 //MARK: - TableViewDelegate Methods
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return chosenParametersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
-        cell.setCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.cellID, for: indexPath) as! SettingsTableViewCell
+        cell.delegate = self
+        cell.setCell(parameter: parameterArray, and: indexPath.row)
+        
+        
         return cell
     }
     
@@ -93,7 +119,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
+        return 270
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -106,27 +132,52 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 120
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            self.chosenParametersArray.remove(at: indexPath.row)
+            menuTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
 }
 //MARK: - MainMenuDelegateMethod
 extension ProfileViewController : MainMenuHeaderDelegate {
+    func presentImagePicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
     func gotData(_ mainMenuHeader: MainMenuHeader, _ value: String, _ buttonState: Bool) {
-        savedButton.isEnabled = buttonState
+        nameHasChanged = buttonState
+        updateButtonState()
         nameToSave = value
     }
 }
 
-extension ProfileViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        switch operation {
-        case .push:
-            return AnimationManager(animationDuration: 4, animationType: .present)
-        case .pop:
-            return AnimationManager(animationDuration: 1.3, animationType: .dismiss)
-        default:
-            return nil
-        }
+extension ProfileViewController : SelectOptionViewControllerDelegate {
+    func didUpdateOperableArray(operableArray: [BodyParameterModel]) {
+        parameterArray = operableArray
+    }
+}
+extension ProfileViewController : SettingsTableViewCellDelegate {
+    func checkNumbers(with operableArray: [BodyParameterModel]) {
+        
+        dataHasChanged = profileViewModel.checkIfDifferent(newArray: operableArray)
+        updateButtonState()
+    }
+    
+    func didChangeValue(with operableArray: [BodyParameterModel]) {
+        self.parameterArray = operableArray
+        print(parameterArray.count)
+    }
+}
+extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

@@ -2,7 +2,7 @@
 //  Profile+CoreDataProperties.swift
 //  Internship Dmytro Volokhovskyi
 //
-//  Created by Дмитро Волоховський on 20/03/2022.
+//  Created by Дмитро Волоховський on 27/03/2022.
 //
 //
 
@@ -18,24 +18,42 @@ extension Profile {
 
     @NSManaged public var name: String?
     @NSManaged public var sex: String?
-    @NSManaged public var parentProfile: NSSet?
+    @NSManaged public var parameters: NSOrderedSet?
 
 }
 
-// MARK: Generated accessors for parentProfile
+// MARK: Generated accessors for parameters
 extension Profile {
 
-    @objc(addParentProfileObject:)
-    @NSManaged public func addToParentProfile(_ value: BodyParameter)
+    @objc(insertObject:inParametersAtIndex:)
+    @NSManaged public func insertIntoParameters(_ value: BodyParameter, at idx: Int)
 
-    @objc(removeParentProfileObject:)
-    @NSManaged public func removeFromParentProfile(_ value: BodyParameter)
+    @objc(removeObjectFromParametersAtIndex:)
+    @NSManaged public func removeFromParameters(at idx: Int)
 
-    @objc(addParentProfile:)
-    @NSManaged public func addToParentProfile(_ values: NSSet)
+    @objc(insertParameters:atIndexes:)
+    @NSManaged public func insertIntoParameters(_ values: [BodyParameter], at indexes: NSIndexSet)
 
-    @objc(removeParentProfile:)
-    @NSManaged public func removeFromParentProfile(_ values: NSSet)
+    @objc(removeParametersAtIndexes:)
+    @NSManaged public func removeFromParameters(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInParametersAtIndex:withObject:)
+    @NSManaged public func replaceParameters(at idx: Int, with value: BodyParameter)
+
+    @objc(replaceParametersAtIndexes:withParameters:)
+    @NSManaged public func replaceParameters(at indexes: NSIndexSet, with values: [BodyParameter])
+
+    @objc(addParametersObject:)
+    @NSManaged public func addToParameters(_ value: BodyParameter)
+
+    @objc(removeParametersObject:)
+    @NSManaged public func removeFromParameters(_ value: BodyParameter)
+
+    @objc(addParameters:)
+    @NSManaged public func addToParameters(_ values: NSOrderedSet)
+
+    @objc(removeParameters:)
+    @NSManaged public func removeFromParameters(_ values: NSOrderedSet)
 
 }
 

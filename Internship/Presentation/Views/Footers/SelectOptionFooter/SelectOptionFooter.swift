@@ -7,13 +7,17 @@
 
 import UIKit
 
+protocol SelectOptionFooterDelegate {
+    func saveUpdatedArray ()
+}
+
 class SelectOptionFooter: UITableViewHeaderFooterView {
     
  static let footerID = "SelectOptionFooter"
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
-    
+    var delegate : SelectOptionFooterDelegate?
     
     func setFooter() {
         cancelButton.setTitle("Cancel", for: .normal)
@@ -25,6 +29,6 @@ class SelectOptionFooter: UITableViewHeaderFooterView {
         print("cancel")
     }
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        print("Select")
+        delegate?.saveUpdatedArray()
     }
 }

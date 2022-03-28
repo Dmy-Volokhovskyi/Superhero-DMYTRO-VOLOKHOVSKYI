@@ -20,6 +20,7 @@ class MainCoordinator : Coordinator {
     func start() {
         
         ProfileManager.sharedInstance.loadProfileInformation()
+        ProfileManager.sharedInstance.loadBodyParameters()
         if ProfileManager.sharedInstance.userProfile != nil {
             home()
         } else {
@@ -29,7 +30,9 @@ class MainCoordinator : Coordinator {
         }
     }
     
-    
+    func back() {
+        navigationController.popViewController(animated: true)
+    }
     
     private func home() {
         let vc = HomeScreenViewController.instantiate()
@@ -45,12 +48,13 @@ class MainCoordinator : Coordinator {
     
     
     
-     func showOptions () {
-        let vc = ProfileViewController.instantiate()
+    func showOptions (model : ProfileViewModel, with profileVC: ProfileViewController, and array :[BodyParameterModel]) {
+        let vc = SelectOptionsViewController.instantiate()
         vc.coordinator = self
-  
-
-        vc.navigationController?.navigationBar.isHidden = true
+        vc.viewModel = model
+        vc.delegate = profileVC
+        vc.operableArray = array
+        navigationController.modalPresentationStyle = .custom
         navigationController.pushViewController(vc, animated: true)
     }
 }

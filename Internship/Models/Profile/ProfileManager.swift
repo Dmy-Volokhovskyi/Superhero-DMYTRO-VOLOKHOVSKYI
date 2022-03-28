@@ -15,53 +15,24 @@ class ProfileManager {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var operableArray : [BodyParameterModel] = []
+    
     var userProfile : Profile?
-    {
-        didSet {
-            loadBodyParameters()
-            print(parameterArray.count)
-        }
-    }
-    var chosenParametersArray = [BodyParameter]()
     
-    var parameterArray : [BodyParameter] = [] {
-        didSet {
-            for parameter in parameterArray {
-                if parameter.isChosen == true {
-                    chosenParametersArray.append(parameter)
-                }
-            }
-        }
-    }
+    var parameterArray : [BodyParameter] = []
     
-    
+    //    MARK: -
     func createDefaultProfile (with sex : String) {
         userProfile = Profile(context: context)
         userProfile?.sex = sex
+        userProfile?.name = nil
+        userProfile?.parameters = BodyParameterStorage.sharedInstance.getBodyParameters()
         saveData()
-    }
-    func saveProfileWith (with sex : String, with name : String){
-        let request : NSFetchRequest<Profile> = Profile.fetchRequest()
-        request.returnsObjectsAsFaults = false
-        saveData()
-        do{
-            let userProfileArray =  try context.fetch(request)
-            if userProfileArray != [] {
-                print(userProfileArray.count)
-                userProfile = userProfileArray[0]
-                userProfile?.sex = sex
-                userProfile?.setValue(name, forKey: "name")
-                saveData()
-            }
-        }catch {
-            print ( "Error fetching data \(error)" )
-        }
-
     }
     
     func saveData() {
         do {
-          try context.save()
+            try context.save()
         }catch{
             print("Error saving Context \(error)")
         }
@@ -70,7 +41,6 @@ class ProfileManager {
     func loadProfileInformation() {
         let request : NSFetchRequest<Profile> = Profile.fetchRequest()
         request.returnsObjectsAsFaults = false
-        saveData()
         do{
             let userProfileArray =  try context.fetch(request)
             if userProfileArray != [] {
@@ -82,16 +52,31 @@ class ProfileManager {
         }
     }
     
-    func loadBodyParameters (with request : NSFetchRequest<BodyParameter> = BodyParameter.fetchRequest(),predicate: NSPredicate? = nil)
-    {
+    func loadBodyParameters (){
+        let fetchRequest: NSFetchRequest<BodyParameter>
         
-        let parameterPredicate = NSPredicate(format: "parentProfile.name MATCHES %@", userProfile!.name!)
-            request.predicate = parameterPredicate
+        fetchRequest = BodyParameter.fetchRequest()
+        
+        let context = context
         do{
-          parameterArray =  try context.fetch(request)
-            print(parameterArray.count)
+            parameterArray =  try context.fetch(fetchRequest)
+            operableArray = BodyParameterStorage.sharedInstance.formOprableArray()
+            print(operableArray.count)
         }catch {
             print (error)
         }
+    }
+    
+    func saveParameterChanges(newParameters : [BodyParameterModel], and name : String) {
+        userProfile?.setValue(name, forKey: "name")
+        
+        if userProfile?.parameters?.count == newParameters.count {
+            for parameter in 0...newParameters.count-1 {
+                parameterArray[parameter].isChosen = newParameters[parameter].isChosen
+                parameterArray[parameter].isToggled = newParameters[parameter].isToggled
+                parameterArray[parameter].measureValue = newParameters[parameter].measureValue
+            }
+        }
+        saveData()
     }
 }

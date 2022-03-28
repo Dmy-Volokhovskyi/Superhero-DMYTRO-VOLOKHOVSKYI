@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="testButton" customModule="Internship_Dmytro_Volokhovskyi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhg-qx-uXX">
+                    <rect key="frame" x="0.0" y="44" width="414" height="243"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp6-EH-nh4">
+                            <rect key="frame" x="43" y="43" width="328" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="fI4-Bj-w8u"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Gp6-EH-nh4" firstAttribute="leading" secondItem="Uhg-qx-uXX" secondAttribute="leading" constant="43" id="PHs-yy-jrM"/>
+                        <constraint firstAttribute="trailing" secondItem="Gp6-EH-nh4" secondAttribute="trailing" constant="43" id="Upe-03-WNk"/>
+                        <constraint firstItem="Gp6-EH-nh4" firstAttribute="top" secondItem="Uhg-qx-uXX" secondAttribute="top" constant="43" id="tz1-KI-6CI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Uhg-qx-uXX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0vD-0o-l3y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Uhg-qx-uXX" secondAttribute="bottom" id="YZB-5F-3LV"/>
+                <constraint firstItem="Uhg-qx-uXX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="er2-Jf-ql4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uhg-qx-uXX" secondAttribute="trailing" id="y6Q-WO-6tP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="Uhg-qx-uXX" id="K0E-yf-h7o"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="273.54910714285711"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qx-yh-3RS" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="868"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9N-1W-ZKe">
-                                                <rect key="frame" x="35" y="52" width="320" height="100"/>
+                                                <rect key="frame" x="35" y="76" width="320" height="100"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="BiU-cX-ATq">
                                                         <rect key="frame" x="100" y="26.333333333333325" width="120" height="47.666666666666657"/>
@@ -35,7 +35,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeD-Zu-nfq">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="120" height="20.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333329" width="120" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -63,19 +63,36 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0yK-W3-ky4">
-                                                <rect key="frame" x="28" y="362" width="334" height="382"/>
+                                                <rect key="frame" x="28" y="386" width="334" height="382"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="382" id="cMc-b2-ubj"/>
                                                 </constraints>
                                             </tableView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wU4-FB-41a">
+                                                <rect key="frame" x="43" y="267" width="347" height="84"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="84" id="oh4-K6-Ixk"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iWb-2j-jGH">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="i9N-1W-ZKe" firstAttribute="leading" secondItem="4Qx-yh-3RS" secondAttribute="leading" constant="35" id="2JV-2E-mH3"/>
-                                            <constraint firstItem="i9N-1W-ZKe" firstAttribute="top" secondItem="4Qx-yh-3RS" secondAttribute="top" constant="52" id="bIq-AN-aho"/>
+                                            <constraint firstItem="wU4-FB-41a" firstAttribute="leading" secondItem="4Qx-yh-3RS" secondAttribute="leading" constant="43" id="VK1-iP-dPu"/>
+                                            <constraint firstItem="i9N-1W-ZKe" firstAttribute="top" secondItem="4Qx-yh-3RS" secondAttribute="top" constant="76" id="bIq-AN-aho"/>
                                             <constraint firstAttribute="bottom" secondItem="0yK-W3-ky4" secondAttribute="bottom" constant="100" id="ePo-LJ-Eym"/>
                                             <constraint firstItem="0yK-W3-ky4" firstAttribute="top" secondItem="i9N-1W-ZKe" secondAttribute="bottom" constant="210" id="gcZ-0m-u2A"/>
+                                            <constraint firstItem="wU4-FB-41a" firstAttribute="top" secondItem="i9N-1W-ZKe" secondAttribute="bottom" constant="91" id="grs-q1-i8u"/>
                                             <constraint firstAttribute="trailing" secondItem="i9N-1W-ZKe" secondAttribute="trailing" constant="35" id="jng-xJ-NtO"/>
+                                            <constraint firstAttribute="trailing" secondItem="wU4-FB-41a" secondAttribute="trailing" id="kHM-Ds-fKt"/>
                                             <constraint firstAttribute="trailing" secondItem="0yK-W3-ky4" secondAttribute="trailing" constant="28" id="mv2-Ae-zVK"/>
                                             <constraint firstItem="0yK-W3-ky4" firstAttribute="leading" secondItem="4Qx-yh-3RS" secondAttribute="leading" constant="28" id="nvD-cj-L6d"/>
                                         </constraints>
@@ -106,6 +123,7 @@
                         <outlet property="genderLabel" destination="lEe-1W-NZY" id="mVZ-kI-qts"/>
                         <outlet property="menuTable" destination="0yK-W3-ky4" id="9sD-GB-zC4"/>
                         <outlet property="nameLabel" destination="QeD-Zu-nfq" id="Ezn-WK-1TW"/>
+                        <outlet property="parametersCollectionView" destination="wU4-FB-41a" id="wdI-pt-NIA"/>
                         <outlet property="scrollView" destination="Igi-cU-3c2" id="bYp-Np-j9Q"/>
                     </connections>
                 </viewController>
