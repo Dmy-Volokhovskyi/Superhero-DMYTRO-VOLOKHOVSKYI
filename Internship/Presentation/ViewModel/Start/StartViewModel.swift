@@ -1,3 +1,4 @@
+
 //
 //  StartViewModel.swift
 //  Internship Dmytro Volokhovskyi
@@ -5,7 +6,6 @@
 //  Created by Дмитро Волоховський on 21/02/2022.
 //
 
-import Foundation
 import UIKit
 struct StartViewModel {
 

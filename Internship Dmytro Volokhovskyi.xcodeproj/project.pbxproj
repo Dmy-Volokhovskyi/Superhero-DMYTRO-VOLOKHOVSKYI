@@ -74,6 +74,7 @@
 		7CDA6A1827FC4EAA007F6C6E /* BodyParameter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA6A1427FC4EAA007F6C6E /* BodyParameter+CoreDataProperties.swift */; };
 		7CDA6A1927FC4EAA007F6C6E /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA6A1527FC4EAA007F6C6E /* Profile+CoreDataClass.swift */; };
 		7CDA6A1A27FC4EAA007F6C6E /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA6A1627FC4EAA007F6C6E /* Profile+CoreDataProperties.swift */; };
+		7CDA6A1C27FC61B2007F6C6E /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA6A1B27FC61B2007F6C6E /* StartViewModel.swift */; };
 		7CFB768527F2F36D008B369A /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB768427F2F36D008B369A /* PresentationController.swift */; };
 		7CFB768927F2F82D008B369A /* TransitionDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB768827F2F82D008B369A /* TransitionDirection.swift */; };
 		7CFB768C27F2FB7D008B369A /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB768B27F2FB7D008B369A /* PresentAnimation.swift */; };
@@ -171,6 +172,7 @@
 		7CDA6A1427FC4EAA007F6C6E /* BodyParameter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyParameter+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7CDA6A1527FC4EAA007F6C6E /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7CDA6A1627FC4EAA007F6C6E /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7CDA6A1B27FC61B2007F6C6E /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		7CFB768427F2F36D008B369A /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		7CFB768827F2F82D008B369A /* TransitionDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDirection.swift; sourceTree = "<group>"; };
 		7CFB768B27F2FB7D008B369A /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				7C46A00B27C6A7BE0086E772 /* StartViewModel.swift */,
+				7CDA6A1B27FC61B2007F6C6E /* StartViewModel.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				7CDA6A1927FC4EAA007F6C6E /* Profile+CoreDataClass.swift in Sources */,
 				7CDA6A1227FC3798007F6C6E /* UIFont + appFonts.swift in Sources */,
 				7C2DF5AC27DFDA2E00D46EA6 /* MainMenuHeader.swift in Sources */,
+				7CDA6A1C27FC61B2007F6C6E /* StartViewModel.swift in Sources */,
 				7C469FD727C569830086E772 /* MainCoordinator + Progress.swift in Sources */,
 				7CAE1E5627C2D47A00988335 /* HomeScreenViewController.swift in Sources */,
 				7CDA6A1027FC3609007F6C6E /* UIColor+CustomColors.swift in Sources */,
