@@ -53,7 +53,6 @@
 		7C469FF727C56AA00086E772 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C469FF627C56AA00086E772 /* ProgramsViewModel.swift */; };
 		7C469FF927C56AAB0086E772 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C469FF827C56AAB0086E772 /* CalculatorViewModel.swift */; };
 		7C469FFB27C56AB20086E772 /* MuscleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C469FFA27C56AB20086E772 /* MuscleViewModel.swift */; };
-		7C46A00C27C6A7BE0086E772 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46A00B27C6A7BE0086E772 /* StartViewModel.swift */; };
 		7C5C950927E8CFF00035C4DB /* SelectOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C950827E8CFF00035C4DB /* SelectOptionsViewController.swift */; };
 		7C5C950B27E8D0760035C4DB /* SelectOptionsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C5C950A27E8D0760035C4DB /* SelectOptionsViewController.storyboard */; };
 		7CA221A827E79F2A00FBA14A /* BodyParameterStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA221A727E79F2A00FBA14A /* BodyParameterStorage.swift */; };
@@ -151,7 +150,6 @@
 		7C469FF627C56AA00086E772 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsViewModel.swift; sourceTree = "<group>"; };
 		7C469FF827C56AAB0086E772 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		7C469FFA27C56AB20086E772 /* MuscleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleViewModel.swift; sourceTree = "<group>"; };
-		7C46A00B27C6A7BE0086E772 /* StartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewModel.swift; path = ../../../../../../StartViewModel.swift; sourceTree = "<group>"; };
 		7C5C950827E8CFF00035C4DB /* SelectOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionsViewController.swift; sourceTree = "<group>"; };
 		7C5C950A27E8D0760035C4DB /* SelectOptionsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectOptionsViewController.storyboard; sourceTree = "<group>"; };
 		7CA221A727E79F2A00FBA14A /* BodyParameterStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParameterStorage.swift; sourceTree = "<group>"; };
@@ -483,7 +481,6 @@
 		7C469FFC27C6A1590086E772 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				7C46A00B27C6A7BE0086E772 /* StartViewModel.swift */,
 				7CDA6A1B27FC61B2007F6C6E /* StartViewModel.swift */,
 			);
 			path = Start;
@@ -905,7 +902,6 @@
 				7C1B1E1A27BC08F800A42B88 /* AppDelegate.swift in Sources */,
 				7CFB768927F2F82D008B369A /* TransitionDirection.swift in Sources */,
 				7C1B1E5A27BC126400A42B88 /* Coordinator.swift in Sources */,
-				7C46A00C27C6A7BE0086E772 /* StartViewModel.swift in Sources */,
 				7CFB768E27F2FB88008B369A /* DismissAnimation.swift in Sources */,
 				7C469FF127C56A710086E772 /* MuscleViewController.swift in Sources */,
 				7C469FF327C56A900086E772 /* ProfileViewModel.swift in Sources */,
