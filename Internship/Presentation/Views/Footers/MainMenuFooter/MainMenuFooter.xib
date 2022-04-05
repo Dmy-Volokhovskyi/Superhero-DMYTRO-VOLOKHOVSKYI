@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-Xr-NaP">
-                    <rect key="frame" x="39" y="10" width="327" height="50"/>
+                    <rect key="frame" x="39" y="24" width="327" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="5jj-q7-MJ4"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Kph-tB-m6q"/>
@@ -28,7 +28,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="SQT-Xr-NaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Tht-Cm-2bv"/>
+                <constraint firstItem="SQT-Xr-NaP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="Tht-Cm-2bv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SQT-Xr-NaP" secondAttribute="trailing" constant="43" id="sAb-xR-yNf"/>
                 <constraint firstItem="SQT-Xr-NaP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="39" id="xau-1z-tT2"/>
             </constraints>

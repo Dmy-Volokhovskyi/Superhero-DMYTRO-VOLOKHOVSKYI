@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fi-gb-ECP">
-                        <rect key="frame" x="43" y="15.5" width="90" height="20.5"/>
+                        <rect key="frame" x="43" y="14" width="90" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="Ggx-GO-RIr"/>
                         </constraints>
@@ -27,15 +27,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="aqd-o4-rva">
-                        <rect key="frame" x="156" y="5" width="100" height="31"/>
+                        <rect key="frame" x="156" y="5" width="100" height="40"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDf-zR-wgC">
-                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="31"/>
+                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCp-vY-Mfh">
-                                <rect key="frame" x="67.5" y="0.0" width="32.5" height="31"/>
+                                <rect key="frame" x="67.5" y="0.0" width="32.5" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                         </constraints>
                     </stackView>
                     <switch opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-uO-zZE">
-                        <rect key="frame" x="301" y="2" width="56" height="46"/>
+                        <rect key="frame" x="301" y="9.5" width="56" height="31"/>
                         <connections>
                             <action selector="switchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="fby-E7-L0P"/>
                         </connections>
@@ -64,14 +64,14 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="5ZI-uO-zZE" secondAttribute="trailing" constant="43" id="2w2-aE-h4P"/>
                     <constraint firstAttribute="bottom" secondItem="HQr-TR-Yrj" secondAttribute="bottom" constant="2" id="83A-AP-EFY"/>
-                    <constraint firstAttribute="bottom" secondItem="5ZI-uO-zZE" secondAttribute="bottom" constant="2" id="AlF-1j-rPs"/>
-                    <constraint firstItem="5ZI-uO-zZE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="FMy-Jy-05x"/>
-                    <constraint firstItem="HQr-TR-Yrj" firstAttribute="top" secondItem="aqd-o4-rva" secondAttribute="bottom" constant="11" id="GqW-m9-IxS"/>
+                    <constraint firstItem="aqd-o4-rva" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="INL-1a-Ltg"/>
+                    <constraint firstItem="5ZI-uO-zZE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PWZ-8h-Wz2"/>
                     <constraint firstItem="3Fi-gb-ECP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="43" id="QZp-h6-nSs"/>
                     <constraint firstItem="aqd-o4-rva" firstAttribute="leading" secondItem="3Fi-gb-ECP" secondAttribute="trailing" constant="23" id="Yua-4e-Gts"/>
                     <constraint firstItem="aqd-o4-rva" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ZNM-dO-pZO"/>
                     <constraint firstItem="HQr-TR-Yrj" firstAttribute="leading" secondItem="aqd-o4-rva" secondAttribute="leading" id="Zkv-Lj-kv0"/>
                     <constraint firstItem="HQr-TR-Yrj" firstAttribute="bottom" secondItem="3Fi-gb-ECP" secondAttribute="bottom" constant="12" id="dQc-43-aTy"/>
+                    <constraint firstItem="3Fi-gb-ECP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kVY-gS-MjQ"/>
                     <constraint firstItem="HQr-TR-Yrj" firstAttribute="trailing" secondItem="aqd-o4-rva" secondAttribute="trailing" id="yzS-fQ-Rin"/>
                     <constraint firstItem="5ZI-uO-zZE" firstAttribute="leading" secondItem="aqd-o4-rva" secondAttribute="trailing" constant="45" id="znN-Yl-4pv"/>
                 </constraints>
@@ -79,6 +79,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="atributeName" destination="3Fi-gb-ECP" id="aUn-xw-8HU"/>
+                <outlet property="lineView" destination="HQr-TR-Yrj" id="e2W-Zi-vjf"/>
                 <outlet property="measurementUnit" destination="hCp-vY-Mfh" id="vCu-q2-Xk3"/>
                 <outlet property="statusSwitch" destination="5ZI-uO-zZE" id="LGc-0H-GGS"/>
                 <outlet property="valueTextField" destination="fDf-zR-wgC" id="6Ga-jm-xZk"/>

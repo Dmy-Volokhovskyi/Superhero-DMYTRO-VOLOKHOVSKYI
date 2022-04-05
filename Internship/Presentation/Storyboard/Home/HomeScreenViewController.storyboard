@@ -124,6 +124,7 @@
                         <outlet property="menuTable" destination="0yK-W3-ky4" id="9sD-GB-zC4"/>
                         <outlet property="nameLabel" destination="QeD-Zu-nfq" id="Ezn-WK-1TW"/>
                         <outlet property="parametersCollectionView" destination="wU4-FB-41a" id="wdI-pt-NIA"/>
+                        <outlet property="profileImage" destination="odb-ty-gWS" id="NdR-Kk-rdW"/>
                         <outlet property="scrollView" destination="Igi-cU-3c2" id="bYp-Np-j9Q"/>
                     </connections>
                 </viewController>

@@ -17,7 +17,8 @@ class MainMenuFooter: UITableViewHeaderFooterView {
         self.backgroundView = backgroundView
         instructionLabel.text = labelText
         instructionLabel.textColor = UIColor(named: "descriptionText")
-        instructionLabel.font = UIFont(name: "SairaRoman-Regular", size: 16.0)
+        instructionLabel.font = UIFont.getCustomFont(.SairaRomanRegular, 16)
         
     }
 }
+

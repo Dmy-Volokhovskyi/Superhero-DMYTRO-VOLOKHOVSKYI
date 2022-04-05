@@ -35,24 +35,24 @@ class StartViewController: UIViewController,Storyboarded {
         //set man button title
         supermanButton.setTitle(viewModel.manButtonTitle.uppercased(), for: .normal)
         supermanButton.titleLabel?.textColor = .black
-        supermanButton.titleLabel?.font = UIFont(name: "SairaRoman-Regular", size: 18)
+        supermanButton.titleLabel?.font = UIFont.getCustomFont(.SairaRomanRegular, 18)
         //set gitl button title
         supergirlButton.setTitle(viewModel.girlButtonTitle.uppercased(), for: .normal)
         supermanButton.titleLabel?.textColor = .black
-        supermanButton.titleLabel?.font = UIFont(name: "SairaRoman-Regular", size: 18)
+        supermanButton.titleLabel?.font = UIFont.getCustomFont(.SairaRomanRegular, 18)
         //set main label text
         mainTitleLabel.text = viewModel.mainTitle.uppercased()
-        mainTitleLabel.textColor = UIColor(named: "yellowUIColor") ?? UIColor.yellow
-        mainTitleLabel.font = UIFont(name: "Futura-Bold", size: 32)
+        mainTitleLabel.textColor = UIColor.getCustomOrangeColor()
+        mainTitleLabel.font = UIFont.getCustomFont(.FuturaBold, 32)
         // set Choose hero text
         chooseHereLabel.text = viewModel.chooseHeroTitle
         chooseHereLabel.textColor = .white
-        chooseHereLabel.font = UIFont(name: "SairaRoman-Regular", size: 16)
+        chooseHereLabel.font = UIFont.getCustomFont(.SairaRomanRegular, 16)
         girlBackground.image = viewModel.girlBackgroundImage
         manBackground.image = viewModel.manBackgroundImage
         
     }
-    // Check if there is any profile set
+    // Check if there is any profile set 
     @IBAction private func genderChosenPressed(_ sender: UIButton) {
         viewModel.chooseSex(with: sender.titleLabel?.text ?? "")
         coordinator?.start()

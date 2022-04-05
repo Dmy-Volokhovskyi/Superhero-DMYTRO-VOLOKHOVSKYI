@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSource{
-
+class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSource, Storyboarded{
+    
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,7 +17,8 @@ class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSou
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var parametersCollectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
-    //    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
+    
     
     weak var coordinator : MainCoordinator?
     var homeScreenModel = HomeScreenModel()
@@ -41,11 +42,13 @@ class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSou
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        ProfileManager.sharedInstance.loadBodyParameters()
+        
         scrollView.setContentOffset(.zero, animated: true)
         navigationController?.navigationBar.isHidden = true
         nameLabel.text = ProfileManager.sharedInstance.userProfile?.name ?? ""
+        homeScreenModel = .init()
         toggleArray = homeScreenModel.formToggledArray()
+        setImage()
     }
     
     
@@ -53,7 +56,7 @@ class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSou
         // Get information for correct image and text
         let gender = homeScreenModel.gender
         // set correct image and text
-        if gender == "SUPERGIRL"{
+        if gender == homeScreenModel.genderCheck{
             addImage(homeScreenModel.girlImage)
             genderLabel.text = homeScreenModel.girlTitle
         }else {
@@ -66,15 +69,26 @@ class HomeScreenViewController : BaseViewViewController, UICollectionViewDataSou
         parametersCollectionView.backgroundColor = .clear
         // Top label Set up
         genderLabel.textColor = .white
-        genderLabel.font = UIFont(name: "SairaRoman-Regular", size: 24)
-        // menu setup
+        genderLabel.font = UIFont.getCustomFont(.SairaRomanRegular, 24)
+        // menu setup 
         menuTable.backgroundColor = UIColor.clear
         menuTable.alwaysBounceVertical = false
         nameLabel.text = homeScreenModel.name
-        nameLabel.textColor = UIColor(named: "yellowUIColor")
-        nameLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)
+        nameLabel.textColor = UIColor.getCustomOrangeColor()
+        nameLabel.font = UIFont.getCustomFont(.HelveticaNeue, 20)
     }
-
+    
+    func setImage() {
+        profileImage.image = homeScreenModel.setProfileImage()
+        if profileImage.image != nil {
+            profileImage.contentMode = .scaleToFill
+            profileImage.layer.cornerRadius = 8
+            profileImage.layer.borderWidth = 1
+            profileImage.layer.borderColor = UIColor(red: 0.906, green: 0.769, blue: 0.341, alpha: 1).cgColor
+        }else {
+            profileImage.layer.borderWidth = 0
+        }
+    }
 }
 
 extension HomeScreenViewController : UITableViewDataSource {
@@ -82,6 +96,7 @@ extension HomeScreenViewController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return homeScreenModel.menuArray.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -107,12 +122,12 @@ extension HomeScreenViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         scrollView.setContentOffset(.zero, animated: false)
         homeScreenModel.categorySelected(with: indexPath.section, coordinator: coordinator!)
+        menuTable.deselectRow(at: indexPath, animated: true)
     }
 }
 extension HomeScreenViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(toggleArray.count)
         return toggleArray.count
     }
     
@@ -124,6 +139,9 @@ extension HomeScreenViewController : UICollectionViewDelegate {
 }
 extension HomeScreenViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 84)
+        let label = UILabel(frame: CGRect.zero)
+        label.text = toggleArray[indexPath.item].parameterName
+        label.sizeToFit()
+        return CGSize(width: label.frame.width + 57, height: 84)
     }
 }

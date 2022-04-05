@@ -8,12 +8,7 @@
 import UIKit
 import CoreData
 
-protocol SelectOptionViewControllerDelegate:AnyObject {
-    func didUpdateOperableArray(operableArray : [BodyParameterModel])
-}
-
-
-class SelectOptionsViewController : BaseViewViewController {
+class SelectOptionsViewController : BaseViewViewController, Storyboarded {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -26,15 +21,16 @@ class SelectOptionsViewController : BaseViewViewController {
     var operableArray = [BodyParameterModel]()
     weak var coordinator : MainCoordinator?
     
-  
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        guard let viewModel = viewModel else { return self.dismiss(animated: true)}
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
+        operableArray = viewModel.bodyparameterViewModel
         optionsTableView.bounces = false
         optionsTableView.register(UINib.init(nibName: SelectOptionTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: SelectOptionTableViewCell.cellID)
         optionsTableView.backgroundColor = .clear
@@ -42,36 +38,37 @@ class SelectOptionsViewController : BaseViewViewController {
         tableBackgroundView.layer.borderColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
         tableBackgroundView.backgroundColor = .black
         tableBackgroundView.layer.cornerRadius = 13
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(viewModel.cancelButtonText, for: .normal)
         cancelButton.tintColor = .white
-        selectButton.setTitle("Select", for: .normal)
-        selectButton.tintColor = UIColor(named: "yellowUIColor")
-        titleLabel.text = "Select Option"
+        selectButton.setTitle(viewModel.selectButtonTitle, for: .normal)
+        selectButton.tintColor = UIColor.getCustomOrangeColor()
+        titleLabel.text = viewModel.selectOptionTile
         titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor(named: "yellowUIColor")
-        titleLabel.font =  UIFont(name: "SairaRoman-Regular", size: 16)
+        titleLabel.textColor = UIColor.getCustomOrangeColor()
+        titleLabel.font = UIFont.getCustomFont(.SairaRomanRegular, 16)
         optionsTableView.reloadData()
     }
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        coordinator?.back()
+        self.dismiss(animated: true)
     }
     
     @IBAction func selectButtonPressed(_ sender: Any) {
-        coordinator?.back()
         self.delegate?.didUpdateOperableArray(operableArray: operableArray)
+        self.dismiss(animated: true)
     }
     
 }
 extension SelectOptionsViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return operableArray.count
+        guard let viewModel = viewModel else {return 0}
+        return viewModel.bodyparameterViewModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SelectOptionTableViewCell.cellID, for: indexPath) as! SelectOptionTableViewCell
-        cell.setUp(parameter: operableArray[indexPath.row])
-     
+        guard let viewModel = viewModel else {return SelectOptionTableViewCell()}
+        cell.setUp(parameter: viewModel.bodyparameterViewModel[indexPath.row])
+        
         return cell
     }
     
@@ -79,10 +76,9 @@ extension SelectOptionsViewController : UITableViewDelegate, UITableViewDataSour
         return 40
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        operableArray[indexPath.row].isChosen = !operableArray[indexPath.row].isChosen
-
-        optionsTableView.reloadData()
-        
+        if let viewModel = viewModel {
+            viewModel.bodyparameterViewModel[indexPath.row].isChosen = !viewModel.bodyparameterViewModel[indexPath.row].isChosen
+            optionsTableView.reloadData()
+        }
     }
 }

@@ -2,7 +2,7 @@
 //  Profile+CoreDataClass.swift
 //  Internship Dmytro Volokhovskyi
 //
-//  Created by Дмитро Волоховський on 27/03/2022.
+//  Created by Дмитро Волоховський on 05/04/2022.
 //
 //
 

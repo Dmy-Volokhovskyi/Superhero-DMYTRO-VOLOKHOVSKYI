@@ -8,49 +8,38 @@
 import UIKit
 import CoreData
 
- class BodyParameterStorage {
+class BodyParameterStorage {
     
     static let sharedInstance = BodyParameterStorage()
-     
-     let profile = ProfileManager.sharedInstance.userProfile
-     let context = ProfileManager.sharedInstance.context
-
-     var bodyParameterStorage = [BodyParameter]()
+    
+    let profile = ProfileManager.sharedInstance.userProfile
+    let context = ProfileManager.sharedInstance.mainContext
+    var compareArray : [BodyParameterModel] = []
+    
+    var bodyParameterStorage = [BodyParameter]()
     let measurementUnitCM = "cm"
     let measurementUnitKG = "kg"
     let parameters = ["Height","Weight","Neck","Shoulders","Left biceps","RightBiceps","Left hip","Right hip","Right forearm","Left forearm","Chest","Left lower leg","Right lover let","Right ankle","Left ancle"]
-
-     func getBodyParameters() -> NSOrderedSet{
-            for parameter in parameters {
-                
-                let newBodyParameter  = BodyParameter(context: context)
-                
-                newBodyParameter.isChosen = false
-                newBodyParameter.measureValue = " "
+    
+    func getBodyParameters() -> NSOrderedSet{
+        for parameter in parameters {
+            
+            let newBodyParameter  = BodyParameter(context: context)
+            
+            newBodyParameter.isChosen = false
+            newBodyParameter.measureValue = 0
+            newBodyParameter.measuredIn = measurementUnitCM
+            newBodyParameter.parameterName = parameter
+            newBodyParameter.isToggled = false
+            newBodyParameter.parentProfile = ProfileManager.sharedInstance.userProfile
+            if parameter == "Weight"{
+                newBodyParameter.measuredIn = measurementUnitKG
+            }else {
                 newBodyParameter.measuredIn = measurementUnitCM
-                newBodyParameter.parameterName = parameter
-                newBodyParameter.isToggled = false
-                newBodyParameter.parentProfile = ProfileManager.sharedInstance.userProfile
-                if parameter == "Weight"{
-                    newBodyParameter.measuredIn = measurementUnitKG
-                }else {
-                    newBodyParameter.measuredIn = measurementUnitCM
-                }
-                newBodyParameter.parentProfile = ProfileManager.sharedInstance.userProfile
-                bodyParameterStorage.append(newBodyParameter)
             }
-         return  NSOrderedSet(array :bodyParameterStorage)
-    }
-     
-    func formOprableArray () -> [BodyParameterModel] {
-        
-        var operableArray = [BodyParameterModel]()
-        for parameter in ProfileManager.sharedInstance.parameterArray {
-            let newParameter = BodyParameterModel(parameterName: parameter.parameterName, measuredIn: parameter.measuredIn, measureValue: parameter.measureValue, isChosen: parameter.isChosen, isToggled: parameter.isToggled)
-            operableArray.append(newParameter)
+            newBodyParameter.parentProfile = ProfileManager.sharedInstance.userProfile
+            bodyParameterStorage.append(newBodyParameter)
         }
-        ProfileManager.sharedInstance.operableArray = operableArray
-        return operableArray
+        return  NSOrderedSet(array :bodyParameterStorage)
     }
-     
 }

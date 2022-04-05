@@ -13,7 +13,19 @@ class ProfileManager {
     
     static let sharedInstance = ProfileManager()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    lazy var mainContext: NSManagedObjectContext = {
+        return self.storeContainer.viewContext
+    }()
+    
+    private lazy var storeContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Profile")
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                print("Error \(error), \(error.userInfo)")
+            }
+        }
+        return container
+    }()
     
     var operableArray : [BodyParameterModel] = []
     
@@ -23,18 +35,19 @@ class ProfileManager {
     
     //    MARK: -
     func createDefaultProfile (with sex : String) {
-        userProfile = Profile(context: context)
+        userProfile = Profile(context: mainContext)
         userProfile?.sex = sex
         userProfile?.name = nil
-        userProfile?.parameters = BodyParameterStorage.sharedInstance.getBodyParameters()
+        userProfile?.parameters = nil
         saveData()
     }
     
     func saveData() {
+        guard mainContext.hasChanges else { return }
         do {
-            try context.save()
-        }catch{
-            print("Error saving Context \(error)")
+            try mainContext.save()
+        }catch let error as NSError{
+            print("Error saving Context \(error.localizedDescription)")
         }
     }
     
@@ -42,41 +55,32 @@ class ProfileManager {
         let request : NSFetchRequest<Profile> = Profile.fetchRequest()
         request.returnsObjectsAsFaults = false
         do{
-            let userProfileArray =  try context.fetch(request)
+            let userProfileArray =  try mainContext.fetch(request)
             if userProfileArray != [] {
-                print(userProfileArray.count)
                 userProfile = userProfileArray[0]
             }
         }catch {
             print ( "Error fetching data \(error)" )
         }
-    }
-    
-    func loadBodyParameters (){
-        let fetchRequest: NSFetchRequest<BodyParameter>
-        
-        fetchRequest = BodyParameter.fetchRequest()
-        
-        let context = context
-        do{
-            parameterArray =  try context.fetch(fetchRequest)
-            operableArray = BodyParameterStorage.sharedInstance.formOprableArray()
-            print(operableArray.count)
-        }catch {
-            print (error)
+        if userProfile?.parameters == [] {
+            userProfile?.parameters = BodyParameterStorage.sharedInstance.getBodyParameters()
         }
     }
     
-    func saveParameterChanges(newParameters : [BodyParameterModel], and name : String) {
+    func saveParameterChanges(newParameters : [BodyParameter]?, and name : String?, and profileImage : Data?) {
         userProfile?.setValue(name, forKey: "name")
-        
-        if userProfile?.parameters?.count == newParameters.count {
-            for parameter in 0...newParameters.count-1 {
-                parameterArray[parameter].isChosen = newParameters[parameter].isChosen
-                parameterArray[parameter].isToggled = newParameters[parameter].isToggled
-                parameterArray[parameter].measureValue = newParameters[parameter].measureValue
-            }
+        userProfile?.setValue(profileImage, forKey: "profileImage")
+        if let newParameters = newParameters {
+            userProfile?.parameters = NSOrderedSet(array: newParameters)
         }
         saveData()
+    }
+    
+    func getUnwreppedImage () -> UIImage? {
+        if userProfile?.profileImage != nil {
+            let image = UIImage(data: (userProfile?.profileImage)!)
+            return image!
+        }
+        return nil
     }
 }

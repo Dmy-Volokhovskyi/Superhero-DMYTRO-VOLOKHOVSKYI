@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainMenuHeaderDelegate {
     func gotData (_ mainMenuHeader : MainMenuHeader, _ value : String, _ buttonState : Bool)

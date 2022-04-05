@@ -20,7 +20,7 @@ class MainCoordinator : Coordinator {
     func start() {
         
         ProfileManager.sharedInstance.loadProfileInformation()
-        ProfileManager.sharedInstance.loadBodyParameters()
+        
         if ProfileManager.sharedInstance.userProfile != nil {
             home()
         } else {
@@ -39,13 +39,12 @@ class MainCoordinator : Coordinator {
         vc.coordinator = self
         vc.navigationItem.hidesBackButton = true
         vc.navigationController?.navigationBar.isHidden = false
-        navigationController.navigationBar.tintColor = UIColor(named: "yellowUIColor")
+        navigationController.navigationBar.tintColor = UIColor.getCustomOrangeColor()
         //Can't Get them to have the style I want
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font : UIFont(name: "SairaRoman-Medium", size: 18)!]
-        navigationController.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "AvenirNextCondensed-DemiBoldItalic", size: 40)!], for: .normal)
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font : UIFont.getCustomFont(.SairaRomanMedium, 18)]
+        navigationController.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.getCustomFont(.AvenirNextCondensedDemiBoldItalic, 40)], for: .normal)
         navigationController.pushViewController(vc, animated: false)
     }
-    
     
     
     func showOptions (model : ProfileViewModel, with profileVC: ProfileViewController, and array :[BodyParameterModel]) {

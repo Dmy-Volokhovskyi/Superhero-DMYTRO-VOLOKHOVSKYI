@@ -2,7 +2,7 @@
 //  Profile+CoreDataProperties.swift
 //  Internship Dmytro Volokhovskyi
 //
-//  Created by Дмитро Волоховський on 27/03/2022.
+//  Created by Дмитро Волоховський on 05/04/2022.
 //
 //
 
@@ -17,6 +17,7 @@ extension Profile {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var profileImage: Data?
     @NSManaged public var sex: String?
     @NSManaged public var parameters: NSOrderedSet?
 
