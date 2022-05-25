@@ -15,6 +15,7 @@ class BodyParameterStorage {
     let profile = ProfileManager.sharedInstance.userProfile
     let context = ProfileManager.sharedInstance.mainContext
     var compareArray : [BodyParameterModel] = []
+    var toggledArray : [BodyParameterModel] = []
     
     var bodyParameterStorage = [BodyParameter]()
     let measurementUnitCM = "cm"

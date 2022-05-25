@@ -31,7 +31,5 @@ class PanelTransition: NSObject, UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DismissAnimation()
     }
-    
-
 }
 

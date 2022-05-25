@@ -18,8 +18,12 @@
                         <subviews>
                             <tableView contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sb7-5f-gFa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="942"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-gw-bmi">
+                                <rect key="frame" x="0.0" y="812" width="414" height="84"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRV-Sy-lEk">
                                 <rect key="frame" x="43" y="812" width="328" height="50"/>
                                 <constraints>
@@ -35,18 +39,23 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MQW-gw-bmi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0TZ-2j-PwB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xRV-Sy-lEk" secondAttribute="trailing" constant="43" id="0uL-u6-jBY"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="80" id="1za-wQ-bIO"/>
-                            <constraint firstItem="sb7-5f-gFa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="37a-wl-wDd"/>
+                            <constraint firstItem="sb7-5f-gFa" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-44" id="37a-wl-wDd"/>
                             <constraint firstItem="xRV-Sy-lEk" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottomMargin" id="Ko4-Fb-bE8"/>
+                            <constraint firstItem="MQW-gw-bmi" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="NoN-bW-7dp"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailing" id="OaK-X1-bhx"/>
                             <constraint firstItem="sb7-5f-gFa" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="PCz-ss-6ys"/>
+                            <constraint firstAttribute="bottom" secondItem="MQW-gw-bmi" secondAttribute="bottom" id="bIW-Mn-zyN"/>
                             <constraint firstItem="xRV-Sy-lEk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="fhy-yO-6mR"/>
+                            <constraint firstItem="MQW-gw-bmi" firstAttribute="top" secondItem="xRV-Sy-lEk" secondAttribute="top" id="vVu-h1-kYQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addOptionsButton" destination="xRV-Sy-lEk" id="Zdy-0F-QkR"/>
                         <outlet property="backgroundView" destination="5EZ-qb-Rvc" id="k1b-0I-hyX"/>
+                        <outlet property="buttonBackgroundView" destination="MQW-gw-bmi" id="ROY-bw-vjx"/>
                         <outlet property="menuTableView" destination="sb7-5f-gFa" id="PUC-MO-ynf"/>
                     </connections>
                 </viewController>

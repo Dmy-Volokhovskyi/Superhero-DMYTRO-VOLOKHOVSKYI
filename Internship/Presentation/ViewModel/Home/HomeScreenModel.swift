@@ -30,6 +30,7 @@ class HomeScreenModel {
     init () {
         fetchParameters()
         toggledArray = formToggledArray()
+        BodyParameterStorage.sharedInstance.toggledArray = toggledArray
     }
     
     func categorySelected (with index : Int, coordinator : MainCoordinator)  {

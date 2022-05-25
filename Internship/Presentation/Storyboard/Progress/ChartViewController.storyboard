@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chart View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChartViewController" customModule="Internship_Dmytro_Volokhovskyi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z89-aV-yRu">
+                                <rect key="frame" x="186" y="132" width="42" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="I7X-PI-Apy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXU-Vl-AHm">
+                                <rect key="frame" x="35" y="196" width="344" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A47-fW-sGv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-le-8zW" customClass="ChartView" customModule="Internship_Dmytro_Volokhovskyi" customModuleProvider="target">
+                                <rect key="frame" x="24" y="444" width="366" height="404"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4ye-le-8zW" secondAttribute="bottom" constant="48" id="ChU-9d-J4w"/>
+                            <constraint firstItem="iXU-Vl-AHm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="GP2-Ol-HM0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iXU-Vl-AHm" secondAttribute="trailing" constant="35" id="QGp-G5-tT5"/>
+                            <constraint firstItem="iXU-Vl-AHm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xbj-OB-9dW"/>
+                            <constraint firstItem="4ye-le-8zW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="cPG-Ma-7Jx"/>
+                            <constraint firstItem="iXU-Vl-AHm" firstAttribute="top" secondItem="z89-aV-yRu" secondAttribute="bottom" constant="24" id="eLq-v2-697"/>
+                            <constraint firstItem="z89-aV-yRu" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="132" id="jW7-pI-QRv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4ye-le-8zW" secondAttribute="trailing" constant="24" id="jin-GG-TyO"/>
+                            <constraint firstItem="4ye-le-8zW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="400" id="p1b-NK-0YV"/>
+                            <constraint firstItem="z89-aV-yRu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="x7c-QS-46t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="4ye-le-8zW" id="MmV-cn-L9s"/>
+                        <outlet property="dateInformationLabel" destination="iXU-Vl-AHm" id="12y-Nn-gzc"/>
+                        <outlet property="typeAndUnitLabel" destination="z89-aV-yRu" id="Guk-Kb-gA1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

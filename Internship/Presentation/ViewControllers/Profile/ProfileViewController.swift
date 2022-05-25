@@ -10,6 +10,7 @@ import CoreData
 
 class ProfileViewController: BaseViewViewController, Storyboarded {
     
+    @IBOutlet weak var buttonBackgroundView: UIView!
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var addOptionsButton: UIButton!
@@ -23,7 +24,8 @@ class ProfileViewController: BaseViewViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        buttonBackgroundView.backgroundColor = .clear
+        buttonBackgroundView.addGradient(colors: [.black, UIColor.clear], locations: [0.87,1], startPoint: CGPoint(x: 0.0, y: 1.0), endPoint: CGPoint(x: 0.0, y: 0.0), type: .axial, frame: buttonBackgroundView.frame)
         savedButton = UIBarButtonItem(title: profileViewModel.saveButtonTitle, style: .plain, target: self, action: #selector(savedButtonPressed))
         
         self.navigationController?.navigationBar.isHidden = false
@@ -134,7 +136,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
-    
+    override func viewDidLayoutSubviews() {
+          super.viewDidLayoutSubviews()
+          self.menuTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 81, right: 0)
+    }
 }
 //MARK: - MainMenuHeaderDelegateMethod
 extension ProfileViewController : MainMenuHeaderDelegate {

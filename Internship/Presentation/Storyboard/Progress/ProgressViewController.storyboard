@@ -15,13 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-6T-dES">
+                                <rect key="frame" x="43" y="203" width="328" height="659"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BJK-6T-dES" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottomMargin" id="0iR-Fk-aO9"/>
+                            <constraint firstItem="BJK-6T-dES" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="FjK-Ub-0Pq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BJK-6T-dES" secondAttribute="trailing" constant="43" id="eVs-gp-0Xk"/>
+                            <constraint firstItem="BJK-6T-dES" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="203" id="z8P-S3-nsR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="BJK-6T-dES" id="7cF-ha-Psa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="60"/>
+            <point key="canvasLocation" x="13.043478260869566" y="59.598214285714285"/>
         </scene>
     </scenes>
     <resources>

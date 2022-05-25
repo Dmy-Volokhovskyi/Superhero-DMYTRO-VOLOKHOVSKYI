@@ -20,7 +20,7 @@ extension UIFont {
         case .SairaRomanMedium:
             return UIFont(name: "SairaRoman-Medium", size: size) ?? UIFont()
         case .HelveticaNeueRegular:
-            return UIFont(name: "HelveticaNeue-Regular", size: size) ?? UIFont()
+            return UIFont(name: "HelveticaNeue-Regular", size: size) ?? UIFont(name: "HelveticaNeue", size: size) ?? UIFont()
         case .SairaRomanRegular:
             return UIFont(name: "SairaRoman-Regular", size: size) ?? UIFont()
         case .FuturaBold:
@@ -30,5 +30,6 @@ extension UIFont {
         }
 }
 }
+
 
 
